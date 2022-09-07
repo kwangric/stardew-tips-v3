@@ -162,7 +162,7 @@ const CropsInfo = () => {
                       variant="outlined"
                       sx={{
                         width: 275,
-                        height: 380,
+                        height: 390,
                         display: 'flex',
                         flexDirection: 'column',
                         alignContent: 'flex-start',
@@ -173,7 +173,7 @@ const CropsInfo = () => {
                         borderRadius: '25px',
                       }}
                     >
-                      <Box>
+
                         <Box className="card-title">
                           <Typography variant="h5" component="div">
                             {crop.name}
@@ -209,7 +209,7 @@ const CropsInfo = () => {
                               )
                             })}
                           </Box>
-                        </Box>
+
                         <Box
                           sx={{
                             display: 'flex',
@@ -218,8 +218,8 @@ const CropsInfo = () => {
                           }}
                         >
                           <Box className="card-information">
-                            <CardContent>
-                              <Typography variant="body3">
+
+                              <Typography variant="body1">
                                 Cost
                                 <br />
                               </Typography>
@@ -254,7 +254,7 @@ const CropsInfo = () => {
                                 </Typography>
                               )}
 
-                              <Typography variant="body3">
+                              <Typography variant="body1">
                                 Grow Time
                                 <br />
                               </Typography>
@@ -302,7 +302,7 @@ const CropsInfo = () => {
                                 </Typography>
                               )}
 
-                              <Typography variant="body3">
+                              <Typography variant="body1">
                                 Sell Price
                                 <br />
                               </Typography>
@@ -318,7 +318,7 @@ const CropsInfo = () => {
                                 Iridium: {Math.floor(Math.floor(crop.sellPrice * 2)* priceMultiplier)}g
                                 <br />
                               </Typography>
-                            </CardContent>
+
                           </Box>
                           <Box
                             sx={{ display: 'flex', alignContent: 'center' }}
