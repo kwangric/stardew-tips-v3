@@ -1,9 +1,12 @@
 html,
 body {
+  height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  width: 100vw;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0ffff;
+  text-align: center;
 }
 
 a {
@@ -15,12 +18,27 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.component-view {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.section-title {
+  margin: 2rem
+}
+
+.card {
+  padding: 2% 5% 7% 5%
+}
+
+.card-title {
+  padding-top: 5%
+}
+
+.card-information {
+  text-align: left;
+}
+
+.card-image {
+  padding: 5%;
 }
