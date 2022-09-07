@@ -350,21 +350,7 @@ const CropsInfo = () => {
               })}
             </Grid>
           </Box>
-          {displayedCrops.length > 0 ? (
-            <Box sx={{ marginTop: '2rem' }}>
-              <BottomNavigation
-                showLabels
-                onChange={() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth',
-                  })
-                }}
-              >
-                <BottomNavigationAction label="Back to top" />
-              </BottomNavigation>
-            </Box>
-          ) : (
+          {displayedCrops.length > 0 ? (<></>) : (
             <h2>:(</h2>
           )}
         </>
