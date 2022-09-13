@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css'
 
 const Homepage = () => {
   return (
-    <Card className={styles.homeContainer} variant="outlined">
+    <Card sx={{backgroundColor: "#fcfccc", padding: "3rem", borderRadius: '25px'}} variant="outlined">
       <Typography variant="h3" display="block">
         Stardew Tips
       </Typography>

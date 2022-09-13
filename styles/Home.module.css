@@ -12,12 +12,6 @@
   align-items: center;
 }
 
-.homeContainer {
-  background-color: #fcfccc;
-  padding: 3rem;
-  border-radius: 25px;
-}
-
 .footer {
   display: flex;
   flex: 1;
