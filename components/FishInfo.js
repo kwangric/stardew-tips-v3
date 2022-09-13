@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
@@ -17,7 +18,7 @@ import Typography from '@mui/material/Typography'
 import Paper from '@mui/material/Paper'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
-import {fish as newFish} from '../assets/data'
+import { fish as newFish } from '../assets/data'
 
 const FishInfo = () => {
   const [fish, setFish] = useState({})
@@ -106,7 +107,7 @@ const FishInfo = () => {
     <>
       {Object.keys(fish).length > 0 ? (
         <div height="100vh">
-          <Typography sx={{ paddingBottom: '2rem' }} variant="h2">
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h3">
             Fish
           </Typography>
           <Box className="component-view">
@@ -455,39 +456,36 @@ const FishInfo = () => {
                               }}
                             >
                               <Box className="card-information">
-                                <CardContent>
-                                  <Typography variant="body3">
-                                    Sell Price
-                                    <br />
-                                  </Typography>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    Normal:{' '}
-                                    {Math.floor(fish.sellPrice * multiplier)}g{' '}
-                                    <br />
-                                    Silver:{' '}
-                                    {Math.floor(
-                                      Math.floor(fish.sellPrice * 1.25) *
-                                        multiplier
-                                    )}
-                                    g <br />
-                                    Gold:{' '}
-                                    {Math.floor(
-                                      Math.floor(fish.sellPrice * 1.5) *
-                                        multiplier
-                                    )}
-                                    g <br />
-                                    Iridium:{' '}
-                                    {Math.floor(
-                                      Math.floor(fish.sellPrice * 2) *
-                                        multiplier
-                                    )}
-                                    g
-                                    <br />
-                                  </Typography>
-                                </CardContent>
+                                <Typography variant="body1">
+                                  Sell Price
+                                  <br />
+                                </Typography>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  Normal:{' '}
+                                  {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                  <br />
+                                  Silver:{' '}
+                                  {Math.floor(
+                                    Math.floor(fish.sellPrice * 1.25) *
+                                      multiplier
+                                  )}
+                                  g <br />
+                                  Gold:{' '}
+                                  {Math.floor(
+                                    Math.floor(fish.sellPrice * 1.5) *
+                                      multiplier
+                                  )}
+                                  g <br />
+                                  Iridium:{' '}
+                                  {Math.floor(
+                                    Math.floor(fish.sellPrice * 2) * multiplier
+                                  )}
+                                  g
+                                  <br />
+                                </Typography>
                               </Box>
                               <Box
                                 sx={{ display: 'flex', alignContent: 'center' }}
@@ -569,11 +567,11 @@ const FishInfo = () => {
                           variant="outlined"
                           sx={{
                             width: 275,
-                            height: 165,
+                            height: 190,
                             display: 'flex',
                             flexDirection: 'column',
                             alignContent: 'flex-start',
-                            justifyContent: 'flex-start',
+                            justifyContent: 'space-between',
                           }}
                           style={{
                             backgroundColor: '#fcfccc',
@@ -593,38 +591,34 @@ const FishInfo = () => {
                             }}
                           >
                             <Box className="card-information">
-                              <CardContent>
-                                <Typography variant="body3">
-                                  Sell Price
-                                  <br />
-                                </Typography>
-                                <Typography
-                                  variant="body2"
-                                  color="text.secondary"
-                                >
-                                  Normal:{' '}
-                                  {Math.floor(fish.sellPrice * multiplier)}g{' '}
-                                  <br />
-                                  Silver:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.25) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Gold:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.5) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Iridium:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 2) * multiplier
-                                  )}
-                                  g
-                                  <br />
-                                </Typography>
-                              </CardContent>
+                              <Typography variant="body1">
+                                Sell Price
+                                <br />
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
+                              </Typography>
                             </Box>
                             <Box
                               sx={{ display: 'flex', alignContent: 'center' }}
@@ -676,7 +670,7 @@ const FishInfo = () => {
                           variant="outlined"
                           sx={{
                             width: 275,
-                            height: 285,
+                            height: 290,
                             display: 'flex',
                             flexDirection: 'column',
                             alignContent: 'flex-start',
@@ -772,38 +766,34 @@ const FishInfo = () => {
                             }}
                           >
                             <Box className="card-information">
-                              <CardContent>
-                                <Typography variant="body3">
-                                  Sell Price
-                                  <br />
-                                </Typography>
-                                <Typography
-                                  variant="body2"
-                                  color="text.secondary"
-                                >
-                                  Normal:{' '}
-                                  {Math.floor(fish.sellPrice * multiplier)}g{' '}
-                                  <br />
-                                  Silver:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.25) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Gold:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.5) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Iridium:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 2) * multiplier
-                                  )}
-                                  g
-                                  <br />
-                                </Typography>
-                              </CardContent>
+                              <Typography variant="body1">
+                                Sell Price
+                                <br />
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
+                              </Typography>
                             </Box>
                             <Box
                               sx={{ display: 'flex', alignContent: 'center' }}
@@ -820,7 +810,7 @@ const FishInfo = () => {
 
                           {fish.notes ? (
                             <Typography
-                              sx={{ fontSize: '0.75rem' }}
+                              sx={{ fontSize: '0.75rem', paddingTop: '1rem' }}
                               variant="subtitle2"
                             >
                               {fish.notes}
@@ -867,7 +857,7 @@ const FishInfo = () => {
                           variant="outlined"
                           sx={{
                             width: 275,
-                            height: 285,
+                            height: 290,
                             display: 'flex',
                             flexDirection: 'column',
                             alignContent: 'flex-start',
@@ -938,38 +928,34 @@ const FishInfo = () => {
                             }}
                           >
                             <Box className="card-information">
-                              <CardContent>
-                                <Typography variant="body3">
-                                  Sell Price
-                                  <br />
-                                </Typography>
-                                <Typography
-                                  variant="body2"
-                                  color="text.secondary"
-                                >
-                                  Normal:{' '}
-                                  {Math.floor(fish.sellPrice * multiplier)}g{' '}
-                                  <br />
-                                  Silver:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.25) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Gold:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.5) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Iridium:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 2) * multiplier
-                                  )}
-                                  g
-                                  <br />
-                                </Typography>
-                              </CardContent>
+                              <Typography variant="body1">
+                                Sell Price
+                                <br />
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
+                              </Typography>
                             </Box>
                             <Box
                               sx={{ display: 'flex', alignContent: 'center' }}
@@ -986,7 +972,7 @@ const FishInfo = () => {
 
                           {fish.notes ? (
                             <Typography
-                              sx={{ fontSize: '0.75rem' }}
+                              sx={{ fontSize: '0.75rem', paddingTop: '1rem' }}
                               variant="subtitle2"
                             >
                               {fish.notes}
@@ -1034,11 +1020,11 @@ const FishInfo = () => {
                           variant="outlined"
                           sx={{
                             width: 275,
-                            height: 200,
+                            height: 225,
                             display: 'flex',
                             flexDirection: 'column',
                             alignContent: 'flex-start',
-                            justifyContent: 'flex-start',
+                            justifyContent: 'space-between',
                           }}
                           style={{
                             backgroundColor: '#fcfccc',
@@ -1074,38 +1060,34 @@ const FishInfo = () => {
                             }}
                           >
                             <Box className="card-information">
-                              <CardContent>
-                                <Typography variant="body3">
-                                  Sell Price
-                                  <br />
-                                </Typography>
-                                <Typography
-                                  variant="body2"
-                                  color="text.secondary"
-                                >
-                                  Normal:{' '}
-                                  {Math.floor(fish.sellPrice * multiplier)}g{' '}
-                                  <br />
-                                  Silver:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.25) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Gold:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 1.5) *
-                                      multiplier
-                                  )}
-                                  g <br />
-                                  Iridium:{' '}
-                                  {Math.floor(
-                                    Math.floor(fish.sellPrice * 2) * multiplier
-                                  )}
-                                  g
-                                  <br />
-                                </Typography>
-                              </CardContent>
+                              <Typography variant="body1">
+                                Sell Price
+                                <br />
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                Normal:{' '}
+                                {Math.floor(fish.sellPrice * multiplier)}g{' '}
+                                <br />
+                                Silver:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.25) * multiplier
+                                )}
+                                g <br />
+                                Gold:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 1.5) * multiplier
+                                )}
+                                g <br />
+                                Iridium:{' '}
+                                {Math.floor(
+                                  Math.floor(fish.sellPrice * 2) * multiplier
+                                )}
+                                g
+                                <br />
+                              </Typography>
                             </Box>
                             <Box
                               sx={{ display: 'flex', alignContent: 'center' }}
@@ -1132,29 +1114,7 @@ const FishInfo = () => {
           {Object.keys(displayedFish).filter(
             (key) => displayedFish[key].length > 0
           ).length > 0 ? (
-            (bundles.length < 1 || bundles.length > 3) ? (
-              <Box sx={{ marginTop: '2rem' }}>
-                <Paper
-                  className="bottom-nav"
-                  sx={{ bottom: 0, left: 0, right: 0 }}
-                  elevation={3}
-                >
-                  <BottomNavigation
-                    showLabels
-                    onChange={() => {
-                      window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth',
-                      })
-                    }}
-                  >
-                    <BottomNavigationAction label="Back to top" />
-                  </BottomNavigation>
-                </Paper>
-              </Box>
-            ) : (
-              <Box height="50px" />
-            )
+            <Box height="50px" />
           ) : (
             <h2>:(</h2>
           )}

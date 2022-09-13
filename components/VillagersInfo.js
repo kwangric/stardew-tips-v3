@@ -22,7 +22,7 @@ const VillagersInfo = () => {
     <>
       {villagers.length > 0 ? (
         <>
-        <Typography sx={{paddingBottom: "2rem"}} variant="h2">Villagers</Typography>
+        <Typography sx={{paddingBottom: "2rem"}} variant="h3">Villagers</Typography>
           <Box className="component-view">
             <Grid
               container

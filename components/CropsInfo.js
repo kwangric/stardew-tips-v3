@@ -18,7 +18,7 @@ import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import BottomNavigation from '@mui/material/BottomNavigation'
 import BottomNavigationAction from '@mui/material/BottomNavigationAction'
-import {crops as newCrops} from '../assets/data'
+import { crops as newCrops } from '../assets/data'
 
 const CropsInfo = () => {
   const [crops, setCrops] = useState([])
@@ -58,18 +58,30 @@ const CropsInfo = () => {
     <>
       {crops.length > 0 ? (
         <>
-          <Typography sx={{ paddingBottom: '2rem' }} variant="h2">
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h3">
             Crops
           </Typography>
           <Box className="component-view">
-            <Container className="filters"
+            <Container
+              className="filters"
               display="flex"
               align="center"
-              direction="row">
-              <Box sx={{ display: 'flex',
-                  justifyContent: 'center', gap: '20px 100px',
-                  flexWrap: 'wrap'}}>
-                <Box display="flex" flexDirection="column" gap="1rem" height='190px'>
+              direction="row"
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: '20px 100px',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  gap="1rem"
+                  height="190px"
+                >
                   <FormLabel>Seasons</FormLabel>
                   <Box>
                     <FormGroup>
@@ -119,10 +131,13 @@ const CropsInfo = () => {
                   </Box>
                 </Box>
                 {/* Profession */}
-                <Box display="flex" flexDirection="column" gap="1rem" height='150px'>
-                  <FormLabel>
-                    Profession
-                  </FormLabel>
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  gap="1rem"
+                  height="150px"
+                >
+                  <FormLabel>Profession</FormLabel>
                   <RadioGroup
                     value={priceMultiplier}
                     onChange={(event) => {
@@ -135,7 +150,7 @@ const CropsInfo = () => {
                       label="None"
                     />
                     <FormControlLabel
-                      value={1.10}
+                      value={1.1}
                       control={<Radio size="small" />}
                       label="Tiller"
                     />
@@ -173,42 +188,41 @@ const CropsInfo = () => {
                         borderRadius: '25px',
                       }}
                     >
-
-                        <Box className="card-title">
-                          <Typography variant="h5" component="div">
-                            {crop.name}
-                          </Typography>
-                          <Box
-                            sx={{
-                              display: 'flex',
-                              justifyContent: 'center',
-                              gap: '30px',
-                              margin: '4% 0',
-                            }}
-                          >
-                            {crop.season.map((season, index) => {
-                              return (
-                                <Tooltip
-                                  key={index}
-                                  title={
-                                    season[0].toUpperCase() +
-                                    season.slice(1, season.length)
-                                  }
-                                >
-                                  <CardMedia
-                                    component="img"
-                                    sx={{
-                                      width: 25,
-                                      height: 25,
-                                      borderRadius: 5,
-                                    }}
-                                    image={`/images/icons/${season}.png`}
-                                    alt={season}
-                                  />
-                                </Tooltip>
-                              )
-                            })}
-                          </Box>
+                      <Box className="card-title">
+                        <Typography variant="h5" component="div">
+                          {crop.name}
+                        </Typography>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            gap: '30px',
+                            margin: '4% 0',
+                          }}
+                        >
+                          {crop.season.map((season, index) => {
+                            return (
+                              <Tooltip
+                                key={index}
+                                title={
+                                  season[0].toUpperCase() +
+                                  season.slice(1, season.length)
+                                }
+                              >
+                                <CardMedia
+                                  component="img"
+                                  sx={{
+                                    width: 25,
+                                    height: 25,
+                                    borderRadius: 5,
+                                  }}
+                                  image={`/images/icons/${season}.png`}
+                                  alt={season}
+                                />
+                              </Tooltip>
+                            )
+                          })}
+                        </Box>
 
                         <Box
                           sx={{
@@ -218,81 +232,47 @@ const CropsInfo = () => {
                           }}
                         >
                           <Box className="card-information">
-
-                              <Typography variant="body1">
-                                Cost
-                                <br />
-                              </Typography>
-                              {crop.jojaPrice ? (
-                                <>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    {crop.price}g ({crop.shop})
-                                  </Typography>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    {crop.jojaPrice}g (JojaMart)
-                                  </Typography>
-                                </>
-                              ) : crop.price ? (
+                            <Typography variant="body1">
+                              Cost
+                              <br />
+                            </Typography>
+                            {crop.jojaPrice ? (
+                              <>
                                 <Typography
                                   variant="body2"
                                   color="text.secondary"
                                 >
                                   {crop.price}g ({crop.shop})
                                 </Typography>
-                              ) : (
                                 <Typography
                                   variant="body2"
                                   color="text.secondary"
                                 >
-                                  N/A
+                                  {crop.jojaPrice}g (JojaMart)
                                 </Typography>
-                              )}
-
-                              <Typography variant="body1">
-                                Grow Time
-                                <br />
+                              </>
+                            ) : crop.price ? (
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                {crop.price}g ({crop.shop})
                               </Typography>
-                              {crop.regrowthTime ? (
-                                <>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    {crop.growTime} days
-                                    <br />
-                                  </Typography>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    {crop.regrowthTime} days (Regrowth)
-                                    <br />
-                                  </Typography>
-                                </>
-                              ) : crop.irrigatedGrowTime ? (
-                                <>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    {crop.growTime} days
-                                    <br />
-                                  </Typography>
-                                  <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                  >
-                                    {crop.irrigatedGrowTime} days (Irrigated)
-                                    <br />
-                                  </Typography>
-                                </>
-                              ) : (
+                            ) : (
+                              <Typography
+                                variant="body2"
+                                color="text.secondary"
+                              >
+                                N/A
+                              </Typography>
+                            )}
+
+                            <Typography variant="body1">
+                              Grow Time
+                              <br />
+                            </Typography>
+                            {crop.regrowthTime ? (
+                              <>
                                 <Typography
                                   variant="body2"
                                   color="text.secondary"
@@ -300,25 +280,68 @@ const CropsInfo = () => {
                                   {crop.growTime} days
                                   <br />
                                 </Typography>
-                              )}
-
-                              <Typography variant="body1">
-                                Sell Price
-                                <br />
-                              </Typography>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  {crop.regrowthTime} days (Regrowth)
+                                  <br />
+                                </Typography>
+                              </>
+                            ) : crop.irrigatedGrowTime ? (
+                              <>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  {crop.growTime} days
+                                  <br />
+                                </Typography>
+                                <Typography
+                                  variant="body2"
+                                  color="text.secondary"
+                                >
+                                  {crop.irrigatedGrowTime} days (Irrigated)
+                                  <br />
+                                </Typography>
+                              </>
+                            ) : (
                               <Typography
                                 variant="body2"
                                 color="text.secondary"
                               >
-                                Normal: {Math.floor(crop.sellPrice * priceMultiplier)}g <br />
-                                Silver: {Math.floor(
-                                  Math.floor(crop.sellPrice * 1.25) * priceMultiplier
-                                )}g <br />
-                                Gold: {Math.floor(Math.floor(crop.sellPrice * 1.5) * priceMultiplier)}g <br />
-                                Iridium: {Math.floor(Math.floor(crop.sellPrice * 2)* priceMultiplier)}g
+                                {crop.growTime} days
                                 <br />
                               </Typography>
+                            )}
 
+                            <Typography variant="body1">
+                              Sell Price
+                              <br />
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                              Normal:{' '}
+                              {Math.floor(crop.sellPrice * priceMultiplier)}g{' '}
+                              <br />
+                              Silver:{' '}
+                              {Math.floor(
+                                Math.floor(crop.sellPrice * 1.25) *
+                                  priceMultiplier
+                              )}
+                              g <br />
+                              Gold:{' '}
+                              {Math.floor(
+                                Math.floor(crop.sellPrice * 1.5) *
+                                  priceMultiplier
+                              )}
+                              g <br />
+                              Iridium:{' '}
+                              {Math.floor(
+                                Math.floor(crop.sellPrice * 2) * priceMultiplier
+                              )}
+                              g
+                              <br />
+                            </Typography>
                           </Box>
                           <Box
                             sx={{ display: 'flex', alignContent: 'center' }}
@@ -350,9 +373,7 @@ const CropsInfo = () => {
               })}
             </Grid>
           </Box>
-          {displayedCrops.length > 0 ? (<></>) : (
-            <h2>:(</h2>
-          )}
+          {displayedCrops.length > 0 ? <></> : <h2>:(</h2>}
         </>
       ) : (
         <CircularProgress variant="indeterminate" size={150} thickness={3} />
