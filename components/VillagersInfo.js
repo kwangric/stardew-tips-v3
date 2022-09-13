@@ -42,8 +42,8 @@ const VillagersInfo = () => {
                       className="card"
                       variant="outlined"
                       sx={{
-                        width: 275,
-                        height: 350,
+                        width: 230,
+                        height: 315,
                         display: 'flex',
                         flexDirection: 'column',
                         alignContent: 'flex-start',
@@ -114,7 +114,7 @@ const VillagersInfo = () => {
                                   <Tooltip key={index} title={gift.name}>
                                     <CardMedia
                                       component="img"
-                                      sx={{ width: 50, height: 50 }}
+                                      sx={{ width: 35, height: 35 }}
                                       image={`/images/icons/gifts/${gift.imageUrl}.png`}
                                       alt={gift.imageUrl}
                                     />
@@ -141,19 +141,6 @@ const VillagersInfo = () => {
                 )
               })}
             </Grid>
-          </Box>
-          <Box sx={{ marginTop: '2rem' }}>
-            <BottomNavigation
-              showLabels
-              onChange={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                })
-              }}
-            >
-              <BottomNavigationAction label="Back to top" />
-            </BottomNavigation>
           </Box>
         </>
       ) : (
