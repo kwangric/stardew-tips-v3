@@ -2,7 +2,6 @@ import Card from '@mui/material/Card'
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography'
 import Changelog from './Changelog'
-import styles from '../styles/Home.module.css'
 
 const Homepage = () => {
   return (

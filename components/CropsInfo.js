@@ -359,7 +359,7 @@ const CropsInfo = () => {
 
                       {crop.note ? (
                         <Typography
-                          sx={{ fontSize: '0.75rem' }}
+                          sx={{ fontSize: '0.75rem', fontWeight: 'bold' }}
                           variant="subtitle2"
                         >
                           {crop.note}

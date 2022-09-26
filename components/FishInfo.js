@@ -810,7 +810,7 @@ const FishInfo = () => {
 
                           {fish.notes ? (
                             <Typography
-                              sx={{ fontSize: '0.75rem', paddingTop: '1rem' }}
+                              sx={{ fontSize: '0.75rem', paddingTop: '1rem', fontWeight: 'bold' }}
                               variant="subtitle2"
                             >
                               {fish.notes}
@@ -972,7 +972,7 @@ const FishInfo = () => {
 
                           {fish.notes ? (
                             <Typography
-                              sx={{ fontSize: '0.75rem', paddingTop: '1rem' }}
+                              sx={{ fontSize: '0.75rem', paddingTop: '1rem', fontWeight: 'bold'  }}
                               variant="subtitle2"
                             >
                               {fish.notes}
