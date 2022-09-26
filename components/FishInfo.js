@@ -192,12 +192,8 @@ const FishInfo = () => {
                 {/* Bundles */}
                 <Box display="flex" flexDirection="column" gap="1rem">
                   <FormLabel>Bundles</FormLabel>
-                  <Box
-                    display="flex"
-                    flexDirection="column"
-                    flexWrap="wrap"
-                    width="275px"
-                    height="175px"
+                  <div
+                    className="bundles"
                   >
                     <FormControlLabel
                       control={
@@ -303,7 +299,7 @@ const FishInfo = () => {
                       }
                       label="Master Fisher's"
                     />
-                  </Box>
+                  </div>
                 </Box>
                 {/* Profession */}
                 <Box display="flex" flexDirection="column" gap="1rem">

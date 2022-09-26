@@ -42,3 +42,18 @@ a {
 .card-image {
   padding: 5%;
 }
+
+.bundles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center
+}
+
+@media (min-width: 470px) {
+  .bundles {
+    height: 175px;
+    width: 275px;
+    align-items: flex-start;
+  }
+}
