@@ -7,8 +7,6 @@ import CircularProgress from '@mui/material/CircularProgress'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import {villagers as newVillagers} from '../assets/data'
 
 const VillagersInfo = () => {

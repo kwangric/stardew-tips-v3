@@ -16,8 +16,6 @@ import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import { crops as newCrops } from '../assets/data'
 
 const CropsInfo = () => {

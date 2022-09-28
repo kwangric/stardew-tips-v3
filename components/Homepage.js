@@ -9,9 +9,6 @@ const Homepage = () => {
       <Typography variant="h3" display="block">
         Stardew Tips
       </Typography>
-      <Typography variant="body1" display="block">
-        Created by Richard Kwang
-      </Typography>
       <br />
       <Typography variant="caption" color="text.secondary" display="block">
         For any bugs or suggestions, please email richardkwang25@gmail.com

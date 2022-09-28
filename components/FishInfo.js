@@ -15,9 +15,6 @@ import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import Paper from '@mui/material/Paper'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import BottomNavigationAction from '@mui/material/BottomNavigationAction'
 import { fish as newFish } from '../assets/data'
 
 const FishInfo = () => {
