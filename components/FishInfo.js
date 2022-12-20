@@ -828,7 +828,7 @@ const FishInfo = () => {
                   <br />
                   <Typography variant="body1">
                     These fish can only be caught during the Extended Family
-                    Qi's Challenge. They are avaliable all year.
+                    Qi's Challenge. They are available all year.
                   </Typography>
                 </Box>
                 <Grid
