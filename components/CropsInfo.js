@@ -40,11 +40,11 @@ const CropsInfo = () => {
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops)))
+      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops), cropOrder))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops)))
+      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops), cropOrder))
     }
   }
 
