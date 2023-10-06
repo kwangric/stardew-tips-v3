@@ -22,6 +22,7 @@ const CropsInfo = () => {
   const [crops, setCrops] = useState([])
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall'])
   const [displayedCrops, setDisplayedCrops] = useState([])
+  const [cropOrder , setCropOrder] = useState('season')
   const [priceMultiplier, setPriceMultiplier] = useState(1)
 
   const getCropsBySeason = (season, crops) => {
@@ -39,17 +40,46 @@ const CropsInfo = () => {
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      setDisplayedCrops(getCropsBySeason(newSeasons, crops))
+      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops)))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      setDisplayedCrops(getCropsBySeason(newSeasons, crops))
+      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops)))
     }
+  }
+
+  const updateCrops = (order) => {
+    setCropOrder(order)
+    setDisplayedCrops(sortCrops(getCropsBySeason(seasons, crops), order))
+  }
+
+  const sortCrops = (currentCrops, order) => {
+    if (order === 'season') {
+      return currentCrops.sort((a, b) => {
+        if (a.id < b.id) {
+          return -1
+        }
+        if (a.id > b.id) {
+          return 1
+        }
+        return 0})
+    }
+    if (order === 'name') {
+      return currentCrops.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1
+        }
+        if (a.name > b.name) {
+          return 1
+        }
+        return 0})
+    }
+    return currentCrops
   }
 
   useEffect(() => {
     setCrops(newCrops)
-    setDisplayedCrops(newCrops)
+    setDisplayedCrops(sortCrops(newCrops))
   }, [])
 
   return (
@@ -151,6 +181,32 @@ const CropsInfo = () => {
                       value={1.1}
                       control={<Radio size="small" />}
                       label="Tiller"
+                    />
+                  </RadioGroup>
+                </Box>
+                {/* Sort */}
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  gap="1rem"
+                  height="150px"
+                >
+                  <FormLabel>Sort By:</FormLabel>
+                  <RadioGroup
+                    value={cropOrder}
+                    onChange={(event) => {
+                      updateCrops(event.target.value)
+                    }}
+                  >
+                    <FormControlLabel
+                      value="season"
+                      control={<Radio size="small" />}
+                      label="Season"
+                    />
+                    <FormControlLabel
+                      value="name"
+                      control={<Radio size="small" />}
+                      label="Name"
                     />
                   </RadioGroup>
                 </Box>
