@@ -24,7 +24,34 @@ const FishInfo = () => {
   const [bundles, setBundles] = useState([])
   const [bundleFish, setBundleFish] = useState({})
   const [displayedFish, setDisplayedFish] = useState({})
+  const [weather, setWeather] = useState(['Sunny', 'Windy', 'Rain'])
   const [multiplier, setMultiplier] = useState(1)
+
+  const applyFilters = (season, bundle, weather) => {
+    let newFish = {}
+    for (let key in fish) {
+      let filteredFish = fish[key].filter((fish) => {
+        // season filter
+        const combinedSeasons = new Set(fish.season.concat(season))
+        if (combinedSeasons.size === fish.season.length + season.length) {
+          return false
+        }
+        // bundle filter
+        if (Array.isArray(fish.bundle)) {
+          if (
+            fish.bundle.filter((bundle) =>
+              bundles.includes(bundle.imageUrl)
+            ).length > 0
+          ) {
+            return false
+          }
+        }
+        return true
+      })
+      newFish[key] = filteredFish
+    }
+    setDisplayedFish(newFish)
+  }
 
   const getFishBySeason = (season, fish) => {
     let newFish = {}
@@ -59,15 +86,34 @@ const FishInfo = () => {
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      const newFish = getFishBySeason(newSeasons, fish)
-      setSeasonFish(newFish)
-      setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+      applyFilters(newSeasons, bundles, weather)
+      // const newFish = getFishBySeason(newSeasons, fish)
+      // setSeasonFish(newFish)
+      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      const newFish = getFishBySeason(newSeasons, fish)
-      setSeasonFish(newFish)
-      setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+      applyFilters(newSeasons, bundles, weather)
+      // const newFish = getFishBySeason(newSeasons, fish)
+      // setSeasonFish(newFish)
+      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+    }
+  }
+
+  const changeWeather = (weatherToggle) => {
+    let newWeather = [...weather]
+    if (weather.includes(weatherToggle)) {
+      newWeather.splice(weather.indexOf(weatherToggle), 1)
+      setWeather(newWeather)
+      // const newFish = getFishBySeason(newSeasons, fish)
+      // setSeasonFish(newFish)
+      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+    } else {
+      newWeather.push(weatherToggle)
+      setWeather(newWeather)
+      // const newFish = getFishBySeason(newSeasons, fish)
+      // setSeasonFish(newFish)
+      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     }
   }
 
@@ -182,6 +228,56 @@ const FishInfo = () => {
                           />
                         }
                         label="Winter"
+                      />
+                    </FormGroup>
+                  </Box>
+                </Box>
+                {/* Weather */}
+                <Box display="flex" flexDirection="column" gap="1rem">
+                  <FormLabel>Weather</FormLabel>
+                  <Box>
+                    <FormGroup>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="weatherFilter"
+                            defaultChecked
+                            size="small"
+                            value="Sunny"
+                            onChange={(event) => {
+                              // changeWeather(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Sunny"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="weatherFilter"
+                            defaultChecked
+                            size="small"
+                            value="Windy"
+                            onChange={(event) => {
+                              // changeWeather(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Windy"
+                      />
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            className="weatherFilter"
+                            defaultChecked
+                            size="small"
+                            value="Rain"
+                            onChange={(event) => {
+                              // changeWeather(event.target.value)
+                            }}
+                          />
+                        }
+                        label="Rain"
                       />
                     </FormGroup>
                   </Box>
