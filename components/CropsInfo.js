@@ -22,7 +22,7 @@ const CropsInfo = () => {
   const [crops, setCrops] = useState([])
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall'])
   const [displayedCrops, setDisplayedCrops] = useState([])
-  const [cropOrder , setCropOrder] = useState('season')
+  const [cropOrder , setCropOrder] = useState('name')
   const [priceMultiplier, setPriceMultiplier] = useState(1)
 
   const getCropsBySeason = (season, crops) => {
@@ -79,7 +79,7 @@ const CropsInfo = () => {
 
   useEffect(() => {
     setCrops(newCrops)
-    setDisplayedCrops(sortCrops(newCrops))
+    setDisplayedCrops(sortCrops(newCrops, cropOrder))
   }, [])
 
   return (
@@ -199,14 +199,14 @@ const CropsInfo = () => {
                     }}
                   >
                     <FormControlLabel
-                      value="season"
-                      control={<Radio size="small" />}
-                      label="Season"
-                    />
-                    <FormControlLabel
                       value="name"
                       control={<Radio size="small" />}
                       label="Name"
+                    />
+                    <FormControlLabel
+                      value="season"
+                      control={<Radio size="small" />}
+                      label="Season"
                     />
                   </RadioGroup>
                 </Box>
