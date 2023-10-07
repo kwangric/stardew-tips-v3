@@ -27,13 +27,13 @@ const FishInfo = () => {
   const [weather, setWeather] = useState(['Sunny', 'Windy', 'Rain'])
   const [multiplier, setMultiplier] = useState(1)
 
-  const applyFilters = (season, bundle, weather) => {
+  const applyFilters = (seasons, bundles, weather) => {
     let newFish = {}
     for (let key in fish) {
       let filteredFish = fish[key].filter((fish) => {
         // season filter
-        const combinedSeasons = new Set(fish.season.concat(season))
-        if (combinedSeasons.size === fish.season.length + season.length) {
+        const combinedSeasons = new Set(fish.season.concat(seasons))
+        if (combinedSeasons.size === fish.season.length + seasons.length) {
           return false
         }
         // bundle filter
@@ -45,6 +45,11 @@ const FishInfo = () => {
           ) {
             return false
           }
+        }
+        // weather filter
+        const combinedWeather = new Set(fish.weather.concat(weather))
+        if (combinedWeather.size === fish.weather.length + weather.length) {
+          return false
         }
         return true
       })
@@ -105,12 +110,14 @@ const FishInfo = () => {
     if (weather.includes(weatherToggle)) {
       newWeather.splice(weather.indexOf(weatherToggle), 1)
       setWeather(newWeather)
+      applyFilters(seasons, bundles, newWeather)
       // const newFish = getFishBySeason(newSeasons, fish)
       // setSeasonFish(newFish)
       // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     } else {
       newWeather.push(weatherToggle)
       setWeather(newWeather)
+      applyFilters(seasons, bundles, newWeather)
       // const newFish = getFishBySeason(newSeasons, fish)
       // setSeasonFish(newFish)
       // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
@@ -245,7 +252,7 @@ const FishInfo = () => {
                             size="small"
                             value="Sunny"
                             onChange={(event) => {
-                              // changeWeather(event.target.value)
+                              changeWeather(event.target.value)
                             }}
                           />
                         }
@@ -259,7 +266,7 @@ const FishInfo = () => {
                             size="small"
                             value="Windy"
                             onChange={(event) => {
-                              // changeWeather(event.target.value)
+                              changeWeather(event.target.value)
                             }}
                           />
                         }
@@ -273,7 +280,7 @@ const FishInfo = () => {
                             size="small"
                             value="Rain"
                             onChange={(event) => {
-                              // changeWeather(event.target.value)
+                              changeWeather(event.target.value)
                             }}
                           />
                         }
