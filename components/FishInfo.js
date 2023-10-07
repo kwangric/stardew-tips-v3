@@ -24,7 +24,7 @@ const FishInfo = () => {
   const [bundles, setBundles] = useState([])
   const [bundleFish, setBundleFish] = useState({})
   const [displayedFish, setDisplayedFish] = useState({})
-  const [weather, setWeather] = useState(['Sunny', 'Windy', 'Rain'])
+  const [weather, setWeather] = useState('All')
   const [multiplier, setMultiplier] = useState(1)
 
   const applyFilters = (seasons, bundles, weather) => {
@@ -47,9 +47,9 @@ const FishInfo = () => {
           }
         }
         // weather filter
-        const combinedWeather = new Set(fish.weather.concat(weather))
-        if (combinedWeather.size === fish.weather.length + weather.length) {
-          return false
+        if (weather != 'All') {
+          if (!fish.weather.includes(weather) || fish.weather.length > 2)
+            return false
         }
         return true
       })
@@ -105,23 +105,9 @@ const FishInfo = () => {
     }
   }
 
-  const changeWeather = (weatherToggle) => {
-    let newWeather = [...weather]
-    if (weather.includes(weatherToggle)) {
-      newWeather.splice(weather.indexOf(weatherToggle), 1)
-      setWeather(newWeather)
-      applyFilters(seasons, bundles, newWeather)
-      // const newFish = getFishBySeason(newSeasons, fish)
-      // setSeasonFish(newFish)
-      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
-    } else {
-      newWeather.push(weatherToggle)
-      setWeather(newWeather)
-      applyFilters(seasons, bundles, newWeather)
-      // const newFish = getFishBySeason(newSeasons, fish)
-      // setSeasonFish(newFish)
-      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
-    }
+  const changeWeather = (newWeather) => {
+    setWeather(newWeather)
+    applyFilters(seasons, bundles, newWeather)
   }
 
   const changeFishBundle = (bundle) => {
@@ -242,52 +228,33 @@ const FishInfo = () => {
                 {/* Weather */}
                 <Box display="flex" flexDirection="column" gap="1rem">
                   <FormLabel>Weather</FormLabel>
-                  <Box>
-                    <FormGroup>
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            className="weatherFilter"
-                            defaultChecked
-                            size="small"
-                            value="Sunny"
-                            onChange={(event) => {
-                              changeWeather(event.target.value)
-                            }}
-                          />
-                        }
-                        label="Sunny"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            className="weatherFilter"
-                            defaultChecked
-                            size="small"
-                            value="Windy"
-                            onChange={(event) => {
-                              changeWeather(event.target.value)
-                            }}
-                          />
-                        }
-                        label="Windy"
-                      />
-                      <FormControlLabel
-                        control={
-                          <Checkbox
-                            className="weatherFilter"
-                            defaultChecked
-                            size="small"
-                            value="Rain"
-                            onChange={(event) => {
-                              changeWeather(event.target.value)
-                            }}
-                          />
-                        }
-                        label="Rain"
-                      />
-                    </FormGroup>
-                  </Box>
+                  <RadioGroup
+                    value={weather}
+                    onChange={(event) => {
+                      changeWeather(event.target.value)
+                    }}
+                  >
+                    <FormControlLabel
+                      value='All'
+                      control={<Radio size="small" />}
+                      label="All"
+                    />
+                    <FormControlLabel
+                      value='Sunny'
+                      control={<Radio size="small" />}
+                      label="Sunny"
+                    />
+                    <FormControlLabel
+                      value='Windy'
+                      control={<Radio size="small" />}
+                      label="Windy"
+                    />
+                    <FormControlLabel
+                      value='Rain'
+                      control={<Radio size="small" />}
+                      label="Rain"
+                    />
+                  </RadioGroup>
                 </Box>
                 {/* Bundles */}
                 <Box display="flex" flexDirection="column" gap="1rem">
