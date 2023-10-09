@@ -245,11 +245,6 @@ const FishInfo = () => {
                       label="Sunny"
                     />
                     <FormControlLabel
-                      value='Windy'
-                      control={<Radio size="small" />}
-                      label="Windy"
-                    />
-                    <FormControlLabel
                       value='Rain'
                       control={<Radio size="small" />}
                       label="Rain"
