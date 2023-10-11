@@ -125,7 +125,7 @@ const FishInfo = () => {
               align="center"
               direction="row"
             >
-              <TextField className="search-bar" id="outlined-search" label="Search" type="search" size="small" 
+              <TextField sx={{marginBottom: '1rem'}} id="outlined-search" label="Search" type="search" size="small" 
               onChange={(event) => {
                 searchFilter(event.target.value)
               }}/>

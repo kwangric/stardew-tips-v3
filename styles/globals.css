@@ -44,10 +44,6 @@ a {
   padding: 5%;
 }
 
-.search-bar {
-  margin: 1rem;
-}
-
 .bundles {
   display: flex;
   flex-direction: column;

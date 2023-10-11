@@ -20,7 +20,7 @@ const Changelog = () => {
       <Divider variant="middle" />
       <Typography variant="h5">Changelog</Typography>
       <Box>
-        <Typography variant="h6">v2.1.0 Oct 11, 2023</Typography>
+        <Typography variant="h6">v2.1.0 - Oct 11, 2023</Typography>
         <Typography variant="body1">
           Added search function on crops and fish guides.<br/>
           Added ability to sort crops based on name or season.<br/>
@@ -29,7 +29,7 @@ const Changelog = () => {
         </Typography>
       </Box>
       <Box>
-        <Typography variant="h6">v2.0.0 Jun 8, 2022</Typography>
+        <Typography variant="h6">v2.0.0 - Jun 8, 2022</Typography>
         <Typography variant="body1">
           Site overhaul. Added crops and removed bundle guide. Legacy site can
           be found&nbsp;
