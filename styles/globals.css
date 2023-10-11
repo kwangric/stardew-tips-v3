@@ -28,7 +28,8 @@ a {
 }
 
 .card {
-  padding: 2% 5% 7% 5%
+  padding: 2% 5% 7% 5%;
+  border-width: 2px
 }
 
 .card-title {
