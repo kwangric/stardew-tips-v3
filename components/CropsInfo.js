@@ -54,6 +54,21 @@ const CropsInfo = () => {
     setDisplayedCrops(sortCrops(getCropsBySeason(seasons, crops), order))
   }
 
+  const searchFilter = (searchTerm) => {
+    if (searchTerm === '') {
+      setCrops(newCrops)
+      setDisplayedCrops(sortCrops(getCropsBySeason(seasons, newCrops), cropOrder))
+    } else {
+      let filteredCrops = newCrops.filter(crop => crop.name.toLowerCase().includes(searchTerm))
+      if (filteredCrops.length === 0) {
+        setDisplayedCrops([])
+      } else {
+        setCrops(filteredCrops)
+        setDisplayedCrops(sortCrops(getCropsBySeason(seasons, filteredCrops), cropOrder))
+      }
+    }
+  }
+
   const sortCrops = (currentCrops, order) => {
     if (order === 'season') {
       return currentCrops.sort((a, b) => {
@@ -97,7 +112,10 @@ const CropsInfo = () => {
               align="center"
               direction="row"
             >
-              <TextField className="search-bar" id="outlined-search" label="Search" type="search" size="small" />
+              <TextField className="search-bar" id="outlined-search" label="Search" type="search" size="small" 
+              onChange={(event) => {
+                      searchFilter(event.target.value)
+                    }}/>
               <Box
                 sx={{
                   display: 'flex',
