@@ -15,6 +15,7 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
+import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { crops as newCrops } from '../assets/data'
 
@@ -96,6 +97,7 @@ const CropsInfo = () => {
               align="center"
               direction="row"
             >
+              <TextField className="search-bar" id="outlined-search" label="Search" type="search" size="small" />
               <Box
                 sx={{
                   display: 'flex',
