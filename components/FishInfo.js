@@ -21,9 +21,7 @@ import { fish as newFish } from '../assets/data'
 const FishInfo = () => {
   const [fish, setFish] = useState({})
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall', 'winter'])
-  const [seasonFish, setSeasonFish] = useState({})
   const [bundles, setBundles] = useState([])
-  const [bundleFish, setBundleFish] = useState({})
   const [displayedFish, setDisplayedFish] = useState({})
   const [weather, setWeather] = useState('All')
   const [multiplier, setMultiplier] = useState(1)
@@ -77,50 +75,16 @@ const FishInfo = () => {
     }
   }
 
-  const getFishBySeason = (season, fish) => {
-    let newFish = {}
-    for (let key in fish) {
-      newFish[key] = fish[key].filter((fish) => {
-        const combinedSeasons = new Set(fish.season.concat(season))
-        return combinedSeasons.size != fish.season.length + season.length
-      })
-    }
-    return newFish
-  }
-
-  const getFishByBundle = (bundles, fish) => {
-    let newFish = {}
-    for (let key in fish) {
-      newFish[key] = fish[key].filter((singleFish) => {
-        if (Array.isArray(singleFish.bundle)) {
-          return (
-            singleFish.bundle.filter((bundle) =>
-              bundles.includes(bundle.imageUrl)
-            ).length > 0
-          )
-        }
-        return false
-      })
-    }
-    return newFish
-  }
-
   const changeFishSeason = (season) => {
     let newSeasons = [...seasons]
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
       applyFilters(newSeasons, bundles, weather, fish)
-      // const newFish = getFishBySeason(newSeasons, fish)
-      // setSeasonFish(newFish)
-      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
       applyFilters(newSeasons, bundles, weather, fish)
-      // const newFish = getFishBySeason(newSeasons, fish)
-      // setSeasonFish(newFish)
-      // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     }
   }
 
@@ -144,8 +108,6 @@ const FishInfo = () => {
 
   useEffect(() => {
     setFish(newFish)
-    setSeasonFish(newFish)
-    setBundleFish(newFish)
     setDisplayedFish(newFish)
   }, [])
 
