@@ -15,6 +15,7 @@ export const crops = [
     description:
       'The flower grows in a sphere to invite as many butterflies as possible.',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'blue-jazz',
   },
   {
@@ -31,6 +32,7 @@ export const crops = [
     description:
       'Valuable, but slow-growing. Despite its pale color, the florets are packed with nutrients.',
     note: 'Can become a Giant Crop.',
+    backgroundColor: '#acff88',
     imageUrl: 'cauliflower',
   },
   {
@@ -47,6 +49,7 @@ export const crops = [
     description:
       'Plant in spring or summer to grow a coffee plant. Place five beans in a keg to make coffee.',
     note: 'Each plant yields 4 beans per harvest with a small random chance for more beans.',
+    backgroundColor: '#d9f08a',
     imageUrl: 'coffee-bean',
   },
   {
@@ -63,6 +66,7 @@ export const crops = [
     description:
       'Adds a wonderful zestiness to dishes. High quality garlic can be pretty spicy.',
     note: 'Available from year 2+.',
+    backgroundColor: '#acff88',
     imageUrl: 'garlic',
   },
   {
@@ -78,6 +82,7 @@ export const crops = [
     sellPrice: 40,
     description: 'A juicy little bean with a cool, crisp snap.',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'green-bean',
   },
   {
@@ -93,6 +98,7 @@ export const crops = [
     sellPrice: 110,
     description: 'The waxy leaves are great in soups and stir frys',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'kale',
   },
   {
@@ -109,6 +115,7 @@ export const crops = [
     description:
       'A spring tuber closely related to the carrot. It has an earthy taste and is full of nutrients.',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'parsnip',
   },
   {
@@ -124,6 +131,7 @@ export const crops = [
     sellPrice: 80,
     description: 'A widely cultivated tuber.',
     note: '25% chance to produce extra potato per harvest.',
+    backgroundColor: '#acff88',
     imageUrl: 'potato',
   },
   {
@@ -140,6 +148,7 @@ export const crops = [
     description:
       'The stalks are extremely tart, but make a great dessert when sweetened.',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'rhubarb',
   },
   {
@@ -155,6 +164,7 @@ export const crops = [
     sellPrice: 120,
     description: 'A sweet, juicy favorite with an appealing red color.',
     note: '2% chance to produce extra strawberry per harvest.',
+    backgroundColor: '#acff88',
     imageUrl: 'strawberry',
   },
   {
@@ -171,6 +181,7 @@ export const crops = [
     description:
       'The most popoular spring flower. Has a very faint sweet smell.',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'tulip',
   },
   {
@@ -188,6 +199,7 @@ export const crops = [
     description:
       'Rice in its rawest form. Run this through a mill to increase the value.',
     note: null,
+    backgroundColor: '#acff88',
     imageUrl: 'unmilled-rice',
   },
   // Summer
@@ -205,6 +217,7 @@ export const crops = [
     description:
       'A popular berry reported to have many health benefits. The blue skin has the highest nutrient concentration.',
     note: '3 blueberries per harvest, with 2% chance for more blueberries.',
+    backgroundColor: '#ffe38c',
     imageUrl: 'blueberry',
   },
   {
@@ -221,6 +234,7 @@ export const crops = [
     description:
       'One of the most popular grains. The sweet, fresh cobs are a summer favorite.',
     note: null,
+    backgroundColor: '#ffd38b',
     imageUrl: 'corn',
   },
   {
@@ -236,6 +250,7 @@ export const crops = [
     sellPrice: 25,
     description: 'A bitter, tangy flower used to flavor beer.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'hops',
   },
   {
@@ -251,6 +266,7 @@ export const crops = [
     sellPrice: 40,
     description: 'Fiery hot with a hint of sweetness',
     note: '3% chance to produce extra hot pepper per harvest.',
+    backgroundColor: '#ffe38c',
     imageUrl: 'hot-pepper',
   },
   {
@@ -266,6 +282,7 @@ export const crops = [
     sellPrice: 250,
     description: 'A cool, sweet summer treat.',
     note: 'Can become a Giant Crop.',
+    backgroundColor: '#ffe38c',
     imageUrl: 'melon',
   },
   {
@@ -282,6 +299,7 @@ export const crops = [
     description:
       'In addition to its colorful flower, the Poppy has culinary and medicinal uses.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'poppy',
   },
   {
@@ -298,6 +316,7 @@ export const crops = [
     description:
       'A crisp and refreshing root vegetable with hints of pepper when eaten raw.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'radish',
   },
   {
@@ -314,6 +333,7 @@ export const crops = [
     description:
       'Often used in salads and coleslaws. The color can range from purple to blue to green-yellow depending on soil conditions.',
     note: 'Available from year 2+.',
+    backgroundColor: '#ffe38c',
     imageUrl: 'red-cabbage',
   },
   {
@@ -330,6 +350,7 @@ export const crops = [
     description:
       'An extremely juicy fruit that grows in hot, humid weather. Slightly sweet with a sour undertone.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'starfruit',
   },
   {
@@ -346,6 +367,7 @@ export const crops = [
     description:
       'A tropical bloom that thrives in the humid summer air. Has a sweet tangy aroma.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'summer-spangle',
   },
   {
@@ -362,6 +384,7 @@ export const crops = [
     description:
       "A common misconception is that the flower turns so it's always facing the sun.",
     note: 'Produces an additional 0-2 Sunflower Seeds per harvest.',
+    backgroundColor: '#ffd38b',
     imageUrl: 'sunflower',
   },
   {
@@ -378,6 +401,7 @@ export const crops = [
     description:
       'Rich and slightly tangy, the Tomato has a wide variety of culinary uses.',
     note: '5% chance to produce extra tomato per harvest.',
+    backgroundColor: '#ffe38c',
     imageUrl: 'tomato',
   },
   {
@@ -394,6 +418,7 @@ export const crops = [
     description:
       'One of the most widely cultivated grains. Makes a great flour for breads and cakes.',
     note: null,
+    backgroundColor: '#ffd38b',
     imageUrl: 'wheat',
   },
   // Fall
@@ -410,6 +435,7 @@ export const crops = [
     sellPrice: 150,
     description: 'A purple grain cultivated by an ancient civilization.',
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'amaranth',
   },
   {
@@ -426,6 +452,7 @@ export const crops = [
     description:
       'The bud of a thistle plant. The spiny outer leaves conceal a fleshy, filling interior.',
     note: 'Available from year 2+.',
+    backgroundColor: '#ffc68b',
     imageUrl: 'artichoke',
   },
   {
@@ -442,6 +469,7 @@ export const crops = [
     description:
       'A sweet and earthy root vegatable. As a bonus, the leaves make a great salad.',
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'beet',
   },
   {
@@ -458,6 +486,7 @@ export const crops = [
     description:
       'The leafy greens and fibrous stalks are healthy and delicious.',
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'bok-choy',
   },
   {
@@ -473,6 +502,7 @@ export const crops = [
     sellPrice: 75,
     description: 'These tart red berries are a traditional winter food.',
     note: '2 cranberries per harvest, with 10% chance for more cranberries.',
+    backgroundColor: '#ffc68b',
     imageUrl: 'cranberries',
   },
   {
@@ -489,6 +519,7 @@ export const crops = [
     description:
       'A rich and wholesome relative of the tomato. Delicious fried or stewed.',
     note: '0.2% chance to produce extra eggplant per harvest.',
+    backgroundColor: '#ffc68b',
     imageUrl: 'eggplant',
   },
   {
@@ -505,6 +536,7 @@ export const crops = [
     description:
       'An old folk legend suggests that the sweet smell of this flower attracts fairies.',
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'fairy-rose',
   },
   {
@@ -520,6 +552,7 @@ export const crops = [
     sellPrice: 80,
     description: 'A sweet cluster of fruit.',
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'grape',
   },
   {
@@ -536,6 +569,7 @@ export const crops = [
     description:
       'A fall favorite,  grown for its crunchy seeds and delicately flavored flesh. As a bonus, the hollow shell can be carved into a festive decoration.',
     note: 'Can become a Giant Crop.',
+    backgroundColor: '#ffc68b',
     imageUrl: 'pumpkin',
   },
   {
@@ -551,6 +585,7 @@ export const crops = [
     sellPrice: 160,
     description: 'A starchy tuber with a lot of culinary versatility.',
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'yam',
   },
   // Special
@@ -567,6 +602,7 @@ export const crops = [
     sellPrice: 550,
     description: "It's been dormant for eons.",
     note: null,
+    backgroundColor: '#fdfd96',
     imageUrl: 'ancient-fruit',
   },
   {
@@ -582,6 +618,7 @@ export const crops = [
     sellPrice: 300,
     description: 'A sweet and tangy tropical treat.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'pineapple',
   },
   {
@@ -598,6 +635,7 @@ export const crops = [
     sellPrice: 100,
     description: 'This starchy root is one of the most ancient crops.',
     note: null,
+    backgroundColor: '#ffe38c',
     imageUrl: 'taro-root',
   },
   {
@@ -613,6 +651,7 @@ export const crops = [
     sellPrice: 3000,
     description: "It's by far the sweetest thing you've ever smelled.",
     note: null,
+    backgroundColor: '#ffc68b',
     imageUrl: 'sweet-gem-berry',
   },
 ];

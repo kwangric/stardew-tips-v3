@@ -238,7 +238,7 @@ const CropsInfo = () => {
                         justifyContent: 'space-between',
                       }}
                       style={{
-                        backgroundColor: '#fcfccc',
+                        backgroundColor: crop.backgroundColor,
                         borderRadius: '25px',
                       }}
                     >

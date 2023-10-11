@@ -424,7 +424,7 @@ const FishInfo = () => {
                             justifyContent: 'space-between',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -632,7 +632,7 @@ const FishInfo = () => {
                             justifyContent: 'space-between',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -735,7 +735,7 @@ const FishInfo = () => {
                             justifyContent: 'flex-start',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -922,7 +922,7 @@ const FishInfo = () => {
                             justifyContent: 'flex-start',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -1085,7 +1085,7 @@ const FishInfo = () => {
                             justifyContent: 'space-between',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >

@@ -48,7 +48,7 @@ const VillagersInfo = () => {
                         justifyContent: 'space-between',
                       }}
                       style={{
-                        backgroundColor: '#fcfccc',
+                        backgroundColor: '#fdfd96',
                         borderRadius: '25px',
                       }}
                     >
