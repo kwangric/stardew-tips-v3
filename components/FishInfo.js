@@ -28,7 +28,7 @@ const FishInfo = () => {
   const [weather, setWeather] = useState('All')
   const [multiplier, setMultiplier] = useState(1)
 
-  const applyFilters = (seasons, bundles, weather) => {
+  const applyFilters = (seasons, bundles, weather, fish) => {
     let newFish = {}
     for (let key in fish) {
       let filteredFish = fish[key].filter((fish) => {
@@ -38,12 +38,16 @@ const FishInfo = () => {
           return false
         }
         // bundle filter
-        if (Array.isArray(fish.bundle)) {
-          if (
-            fish.bundle.filter((bundle) =>
-              bundles.includes(bundle.imageUrl)
-            ).length > 0
-          ) {
+        if (bundles.length > 0) {
+          if (Array.isArray(fish.bundle)) {
+            if (
+              fish.bundle.filter((bundle) =>
+                bundles.includes(bundle.imageUrl)
+              ).length < 1
+            ) {
+              return false
+            }
+          } else {
             return false
           }
         }
@@ -57,6 +61,20 @@ const FishInfo = () => {
       newFish[key] = filteredFish
     }
     setDisplayedFish(newFish)
+  }
+
+  const searchFilter = (searchTerm) => {
+    if (searchTerm === '') {
+      setFish(newFish)
+      applyFilters(seasons, bundles, weather, newFish)
+    } else {
+      let filteredFish = {}
+      for (let key in newFish) {
+        filteredFish[key] = newFish[key].filter(fish => fish.name.toLowerCase().includes(searchTerm))
+      }
+      setFish(filteredFish)
+      applyFilters(seasons, bundles, weather, filteredFish)
+    }
   }
 
   const getFishBySeason = (season, fish) => {
@@ -92,14 +110,14 @@ const FishInfo = () => {
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      applyFilters(newSeasons, bundles, weather)
+      applyFilters(newSeasons, bundles, weather, fish)
       // const newFish = getFishBySeason(newSeasons, fish)
       // setSeasonFish(newFish)
       // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      applyFilters(newSeasons, bundles, weather)
+      applyFilters(newSeasons, bundles, weather, fish)
       // const newFish = getFishBySeason(newSeasons, fish)
       // setSeasonFish(newFish)
       // setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
@@ -108,7 +126,7 @@ const FishInfo = () => {
 
   const changeWeather = (newWeather) => {
     setWeather(newWeather)
-    applyFilters(seasons, bundles, newWeather)
+    applyFilters(seasons, bundles, newWeather, fish)
   }
 
   const changeFishBundle = (bundle) => {
@@ -116,20 +134,11 @@ const FishInfo = () => {
     if (bundles.includes(bundle)) {
       newBundles.splice(bundles.indexOf(bundle), 1)
       setBundles(newBundles)
-      if (newBundles.length === 0) {
-        setBundleFish(fish)
-        setDisplayedFish(getFishBySeason(seasons, fish))
-      } else {
-        const newFish = getFishByBundle(newBundles, fish)
-        setBundleFish(newFish)
-        setDisplayedFish(getFishByBundle(newBundles, seasonFish))
-      }
+      applyFilters(seasons, newBundles, weather, fish)
     } else {
       newBundles.push(bundle)
       setBundles(newBundles)
-      const newFish = getFishByBundle(newBundles, fish)
-      setBundleFish(newFish)
-      setDisplayedFish(getFishByBundle(newBundles, seasonFish))
+      applyFilters(seasons, newBundles, weather, fish)
     }
   }
 
@@ -154,7 +163,10 @@ const FishInfo = () => {
               align="center"
               direction="row"
             >
-              <TextField className="search-bar" id="outlined-search" label="Search" type="search" size="small" />
+              <TextField className="search-bar" id="outlined-search" label="Search" type="search" size="small" 
+              onChange={(event) => {
+                searchFilter(event.target.value)
+              }}/>
               <Box
                 sx={{
                   display: 'flex',
