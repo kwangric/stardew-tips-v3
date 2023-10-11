@@ -14,44 +14,65 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
+import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { fish as newFish } from '../assets/data'
 
 const FishInfo = () => {
   const [fish, setFish] = useState({})
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall', 'winter'])
-  const [seasonFish, setSeasonFish] = useState({})
   const [bundles, setBundles] = useState([])
-  const [bundleFish, setBundleFish] = useState({})
   const [displayedFish, setDisplayedFish] = useState({})
+  const [weather, setWeather] = useState('All')
   const [multiplier, setMultiplier] = useState(1)
 
-  const getFishBySeason = (season, fish) => {
+  const applyFilters = (seasons, bundles, weather, fish) => {
     let newFish = {}
     for (let key in fish) {
-      newFish[key] = fish[key].filter((fish) => {
-        const combinedSeasons = new Set(fish.season.concat(season))
-        return combinedSeasons.size != fish.season.length + season.length
+      let filteredFish = fish[key].filter((fish) => {
+        // season filter
+        const combinedSeasons = new Set(fish.season.concat(seasons))
+        if (combinedSeasons.size === fish.season.length + seasons.length) {
+          return false
+        }
+        // bundle filter
+        if (bundles.length > 0) {
+          if (Array.isArray(fish.bundle)) {
+            if (
+              fish.bundle.filter((bundle) =>
+                bundles.includes(bundle.imageUrl)
+              ).length < 1
+            ) {
+              return false
+            }
+          } else {
+            return false
+          }
+        }
+        // weather filter
+        if (weather != 'All') {
+          if (!fish.weather.includes(weather) || fish.weather.length > 2)
+            return false
+        }
+        return true
       })
+      newFish[key] = filteredFish
     }
-    return newFish
+    setDisplayedFish(newFish)
   }
 
-  const getFishByBundle = (bundles, fish) => {
-    let newFish = {}
-    for (let key in fish) {
-      newFish[key] = fish[key].filter((singleFish) => {
-        if (Array.isArray(singleFish.bundle)) {
-          return (
-            singleFish.bundle.filter((bundle) =>
-              bundles.includes(bundle.imageUrl)
-            ).length > 0
-          )
-        }
-        return false
-      })
+  const searchFilter = (searchTerm) => {
+    if (searchTerm === '') {
+      setFish(newFish)
+      applyFilters(seasons, bundles, weather, newFish)
+    } else {
+      let filteredFish = {}
+      for (let key in newFish) {
+        filteredFish[key] = newFish[key].filter(fish => fish.name.toLowerCase().includes(searchTerm))
+      }
+      setFish(filteredFish)
+      applyFilters(seasons, bundles, weather, filteredFish)
     }
-    return newFish
   }
 
   const changeFishSeason = (season) => {
@@ -59,16 +80,17 @@ const FishInfo = () => {
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      const newFish = getFishBySeason(newSeasons, fish)
-      setSeasonFish(newFish)
-      setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+      applyFilters(newSeasons, bundles, weather, fish)
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      const newFish = getFishBySeason(newSeasons, fish)
-      setSeasonFish(newFish)
-      setDisplayedFish(getFishBySeason(newSeasons, bundleFish))
+      applyFilters(newSeasons, bundles, weather, fish)
     }
+  }
+
+  const changeWeather = (newWeather) => {
+    setWeather(newWeather)
+    applyFilters(seasons, bundles, newWeather, fish)
   }
 
   const changeFishBundle = (bundle) => {
@@ -76,27 +98,16 @@ const FishInfo = () => {
     if (bundles.includes(bundle)) {
       newBundles.splice(bundles.indexOf(bundle), 1)
       setBundles(newBundles)
-      if (newBundles.length === 0) {
-        setBundleFish(fish)
-        setDisplayedFish(getFishBySeason(seasons, fish))
-      } else {
-        const newFish = getFishByBundle(newBundles, fish)
-        setBundleFish(newFish)
-        setDisplayedFish(getFishByBundle(newBundles, seasonFish))
-      }
+      applyFilters(seasons, newBundles, weather, fish)
     } else {
       newBundles.push(bundle)
       setBundles(newBundles)
-      const newFish = getFishByBundle(newBundles, fish)
-      setBundleFish(newFish)
-      setDisplayedFish(getFishByBundle(newBundles, seasonFish))
+      applyFilters(seasons, newBundles, weather, fish)
     }
   }
 
   useEffect(() => {
     setFish(newFish)
-    setSeasonFish(newFish)
-    setBundleFish(newFish)
     setDisplayedFish(newFish)
   }, [])
 
@@ -114,6 +125,10 @@ const FishInfo = () => {
               align="center"
               direction="row"
             >
+              <TextField sx={{marginBottom: '1rem'}} id="outlined-search" label="Search" type="search" size="small" 
+              onChange={(event) => {
+                searchFilter(event.target.value)
+              }}/>
               <Box
                 sx={{
                   display: 'flex',
@@ -185,6 +200,32 @@ const FishInfo = () => {
                       />
                     </FormGroup>
                   </Box>
+                </Box>
+                {/* Weather */}
+                <Box display="flex" flexDirection="column" gap="1rem">
+                  <FormLabel>Weather</FormLabel>
+                  <RadioGroup
+                    value={weather}
+                    onChange={(event) => {
+                      changeWeather(event.target.value)
+                    }}
+                  >
+                    <FormControlLabel
+                      value='All'
+                      control={<Radio size="small" />}
+                      label="All"
+                    />
+                    <FormControlLabel
+                      value='Sunny'
+                      control={<Radio size="small" />}
+                      label="Sunny"
+                    />
+                    <FormControlLabel
+                      value='Rain'
+                      control={<Radio size="small" />}
+                      label="Rain"
+                    />
+                  </RadioGroup>
                 </Box>
                 {/* Bundles */}
                 <Box display="flex" flexDirection="column" gap="1rem">
@@ -359,7 +400,7 @@ const FishInfo = () => {
                             justifyContent: 'space-between',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -567,7 +608,7 @@ const FishInfo = () => {
                             justifyContent: 'space-between',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -670,7 +711,7 @@ const FishInfo = () => {
                             justifyContent: 'flex-start',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -857,7 +898,7 @@ const FishInfo = () => {
                             justifyContent: 'flex-start',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >
@@ -1020,7 +1061,7 @@ const FishInfo = () => {
                             justifyContent: 'space-between',
                           }}
                           style={{
-                            backgroundColor: '#fcfccc',
+                            backgroundColor: '#fdfd96',
                             borderRadius: '25px',
                           }}
                         >

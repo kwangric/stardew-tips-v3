@@ -5,7 +5,7 @@ body {
   margin: 0;
   width: 100vw;
   font-family: 'Roboto', sans-serif;
-  background-color: #f0ffff;
+  background-color: #d8ffff;
   text-align: center;
 }
 
@@ -28,7 +28,8 @@ a {
 }
 
 .card {
-  padding: 2% 5% 7% 5%
+  padding: 2% 5% 7% 5%;
+  border-width: 2px
 }
 
 .card-title {

@@ -15,6 +15,7 @@ import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import Grid from '@mui/material/Grid'
 import Tooltip from '@mui/material/Tooltip'
+import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { crops as newCrops } from '../assets/data'
 
@@ -22,6 +23,7 @@ const CropsInfo = () => {
   const [crops, setCrops] = useState([])
   const [seasons, setSeasons] = useState(['spring', 'summer', 'fall'])
   const [displayedCrops, setDisplayedCrops] = useState([])
+  const [cropOrder , setCropOrder] = useState('name')
   const [priceMultiplier, setPriceMultiplier] = useState(1)
 
   const getCropsBySeason = (season, crops) => {
@@ -39,17 +41,61 @@ const CropsInfo = () => {
     if (seasons.includes(season)) {
       newSeasons.splice(seasons.indexOf(season), 1)
       setSeasons(newSeasons)
-      setDisplayedCrops(getCropsBySeason(newSeasons, crops))
+      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops), cropOrder))
     } else {
       newSeasons.push(season)
       setSeasons(newSeasons)
-      setDisplayedCrops(getCropsBySeason(newSeasons, crops))
+      setDisplayedCrops(sortCrops(getCropsBySeason(newSeasons, crops), cropOrder))
     }
+  }
+
+  const updateCrops = (order) => {
+    setCropOrder(order)
+    setDisplayedCrops(sortCrops(getCropsBySeason(seasons, crops), order))
+  }
+
+  const searchFilter = (searchTerm) => {
+    if (searchTerm === '') {
+      setCrops(newCrops)
+      setDisplayedCrops(sortCrops(getCropsBySeason(seasons, newCrops), cropOrder))
+    } else {
+      let filteredCrops = newCrops.filter(crop => crop.name.toLowerCase().includes(searchTerm))
+      if (filteredCrops.length === 0) {
+        setDisplayedCrops([])
+      } else {
+        setCrops(filteredCrops)
+        setDisplayedCrops(sortCrops(getCropsBySeason(seasons, filteredCrops), cropOrder))
+      }
+    }
+  }
+
+  const sortCrops = (currentCrops, order) => {
+    if (order === 'season') {
+      return currentCrops.sort((a, b) => {
+        if (a.id < b.id) {
+          return -1
+        }
+        if (a.id > b.id) {
+          return 1
+        }
+        return 0})
+    }
+    if (order === 'name') {
+      return currentCrops.sort((a, b) => {
+        if (a.name < b.name) {
+          return -1
+        }
+        if (a.name > b.name) {
+          return 1
+        }
+        return 0})
+    }
+    return currentCrops
   }
 
   useEffect(() => {
     setCrops(newCrops)
-    setDisplayedCrops(newCrops)
+    setDisplayedCrops(sortCrops(newCrops, cropOrder))
   }, [])
 
   return (
@@ -66,6 +112,10 @@ const CropsInfo = () => {
               align="center"
               direction="row"
             >
+              <TextField sx={{marginBottom: '1rem'}} id="outlined-search" label="Search" type="search" size="small" 
+              onChange={(event) => {
+                      searchFilter(event.target.value)
+                    }}/>
               <Box
                 sx={{
                   display: 'flex',
@@ -154,6 +204,32 @@ const CropsInfo = () => {
                     />
                   </RadioGroup>
                 </Box>
+                {/* Sort */}
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  gap="1rem"
+                  height="150px"
+                >
+                  <FormLabel>Sort By:</FormLabel>
+                  <RadioGroup
+                    value={cropOrder}
+                    onChange={(event) => {
+                      updateCrops(event.target.value)
+                    }}
+                  >
+                    <FormControlLabel
+                      value="name"
+                      control={<Radio size="small" />}
+                      label="Name"
+                    />
+                    <FormControlLabel
+                      value="season"
+                      control={<Radio size="small" />}
+                      label="Season"
+                    />
+                  </RadioGroup>
+                </Box>
               </Box>
             </Container>
             <Grid
@@ -182,7 +258,7 @@ const CropsInfo = () => {
                         justifyContent: 'space-between',
                       }}
                       style={{
-                        backgroundColor: '#fcfccc',
+                        backgroundColor: crop.backgroundColor,
                         borderRadius: '25px',
                       }}
                     >
