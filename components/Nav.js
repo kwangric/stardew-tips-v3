@@ -19,6 +19,7 @@ const Nav = () => {
               <Link href='/crops'>Crops</Link>
               <Link href='/villagers'>Villagers</Link>
               <Link href='/fish'>Fish</Link>
+              <Link href='/buildings'>Buildings</Link>
             </Toolbar>
           </Container>
         </AppBar>

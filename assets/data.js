@@ -2226,11 +2226,11 @@ export const getFishBySeason = (season, fish) => {
 };
 
 // Buildings
-export const farmBuildings = [
+export const buildings = [
   {
     id: 1,
     name: 'Barn',
-    type: 'farm',
+    type: 'carpenter',
     cost: {price: '6,000g', resources: ['Wood (350)', 'Stone (150)']},
     jojaPrice: 37,
     buildTime: 3,
