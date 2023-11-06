@@ -2231,13 +2231,72 @@ export const buildings = [
     id: 1,
     name: 'Barn',
     type: 'carpenter',
-    cost: {price: '6,000g', resources: ['Wood (350)', 'Stone (150)']},
-    jojaPrice: 37,
+    cost: {'gold': '6,000g', 'wood': '350', 'stone': '150'},
     buildTime: 3,
     description:
       'Houses 4 barn-dwelling animals.',
-    animals: 'Cows',
+    animals: ['Cows'],
     imageUrl: 'barn',
     size: '7x4'
-  }
+  },
+  {
+    id: 2,
+    name: 'Big Barn',
+    type: 'carpenter',
+    cost: {'gold': '12,000g', 'wood': '450', 'stone': '200'},
+    buildTime: 3,
+    description:
+      'Houses 8 barn-dwelling animals. Allows animals to give birth. Unlocks goats.',
+    animals: ['Cows', 'Goats'],
+    imageUrl: 'big-barn',
+    size: '7x4'
+  },
+  {
+    id: 3,
+    name: 'Deluxe Barn',
+    type: 'carpenter',
+    cost: {'gold': '25,000g', 'wood': '550', 'stone': '300'},
+    buildTime: 3,
+    description:
+      'Houses 12 barn-dwelling animals. Comes with an auto-feed system. Unlocks sheep and pigs.',
+    animals: ['Cows', 'Goats', 'Sheep', 'Pigs'],
+    imageUrl: 'deluxe-barn',
+    size: '7x4'
+  },
+  {
+    id: 4,
+    name: 'Coop',
+    type: 'carpenter',
+    cost: {'gold': '4,000g', 'wood': '300', 'stone': '100'},
+    buildTime: 3,
+    description:
+      'Houses 4 coop-dwelling animals.',
+    animals: ['Chickens'],
+    imageUrl: 'coop',
+    size: '6x3'
+  },
+  {
+    id: 5,
+    name: 'Big Coop',
+    type: 'carpenter',
+    cost: {'gold': '10,000g', 'wood': '400', 'stone': '150'},
+    buildTime: 3,
+    description:
+      'Houses 8 coop-dwelling animals. Comes with an incubator. Unlocks ducks.',
+    animals: ['Chickens', 'Ducks', 'Dinosaurs'],
+    imageUrl: 'big-coop',
+    size: '6x3'
+  },
+  {
+    id: 6,
+    name: 'Deluxe Coop',
+    type: 'carpenter',
+    cost: {'gold': '20,000g', 'wood': '500', 'stone': '200'},
+    buildTime: 3,
+    description:
+      'Houses 12 coop-dwelling animals. Comes with an auto-feed system. Unlocks rabbits.',
+    animals: ['Chickens', 'Ducks', 'Dinosaurs', 'Rabbits'],
+    imageUrl: 'deluxe-coop',
+    size: '6x3'
+  },
 ]

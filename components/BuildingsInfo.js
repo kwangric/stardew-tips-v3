@@ -25,34 +25,34 @@ const BuildingsInfo = () => {
                     </Typography>
                     <Box className="component-view">
                         <Grid
-                        container
-                        spacing={2}
-                        direction="row"
-                        justifyContent="center"
-                        alignItems="flex-start"
-                        align="center"
-                        flexWrap="wrap"
-                        columnGap="50px"
-                        rowGap="20px"
+                            container
+                            spacing={2}
+                            direction="row"
+                            justifyContent="center"
+                            alignItems="flex-start"
+                            align="center"
+                            flexWrap="wrap"
+                            columnGap="50px"
+                            rowGap="20px"
                         >
                             {buildings.map((building) => {
                                 return (
                                     <Grid key={building.id} item>
                                         <Card
-                                        className="card"
-                                        variant="outlined"
-                                        sx={{
-                                          width: 230,
-                                          height: 315,
-                                          display: 'flex',
-                                          flexDirection: 'column',
-                                          alignContent: 'flex-start',
-                                          justifyContent: 'space-between',
-                                        }}
-                                        style={{
-                                          backgroundColor: '#fdfd96',
-                                          borderRadius: '25px',
-                                        }}
+                                            className="card"
+                                            variant="outlined"
+                                            sx={{
+                                                width: 230,
+                                                height: 400,
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignContent: 'flex-start',
+                                                justifyContent: 'space-between',
+                                            }}
+                                            style={{
+                                                backgroundColor: '#fdfd96',
+                                                borderRadius: '25px',
+                                            }}
                                         >
                                             <Box>
                                                 <Box className="card-title" position="relative">
@@ -64,6 +64,34 @@ const BuildingsInfo = () => {
                                                     <Typography variant="h5" component="div">
                                                         {building.name}
                                                     </Typography>
+                                                    <Typography
+                                                        sx={{ fontSize: '0.75rem', fontWeight: 'bold' }}
+                                                        variant="subtitle2"
+                                                    >
+                                                        {building.description}
+                                                    </Typography>
+                                                    <Box>
+                                                        {Object.entries(building.cost).map((cost, index) => {
+                                                            return (
+                                                                <Box key={index}>
+                                                                    <CardMedia
+                                                                        component="img"
+                                                                        sx={{
+                                                                            width: 20,
+                                                                            height: 20,
+                                                                            display: 'inline',
+                                                                            verticalAlign: 'middle'
+                                                                        }}
+                                                                        image={`/images/resources/${cost[0]}.png`}
+                                                                        alt='gold cost'
+                                                                    />
+                                                                    <Typography variant="body1" sx={{ display: 'inline' }}>
+                                                                        {cost[1]}
+                                                                    </Typography>
+                                                                </Box>
+                                                            )
+                                                        })}
+                                                    </Box>
                                                 </Box>
                                             </Box>
                                         </Card>
