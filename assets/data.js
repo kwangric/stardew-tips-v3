@@ -2224,3 +2224,20 @@ export const getFishBySeason = (season, fish) => {
   }
   return fish.filter((fish) => fish.season.includes(season));
 };
+
+// Buildings
+export const farmBuildings = [
+  {
+    id: 1,
+    name: 'Barn',
+    type: 'farm',
+    cost: {price: '6,000g', resources: ['Wood (350)', 'Stone (150)']},
+    jojaPrice: 37,
+    buildTime: 3,
+    description:
+      'Houses 4 barn-dwelling animals.',
+    animals: 'Cows',
+    imageUrl: 'barn',
+    size: '7x4'
+  }
+]
