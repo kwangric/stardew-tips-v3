@@ -43,7 +43,7 @@ const BuildingsInfo = () => {
                                             variant="outlined"
                                             sx={{
                                                 width: 230,
-                                                height: 400,
+                                                height: 600,
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 alignContent: 'flex-start',
