@@ -5,15 +5,27 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import CircularProgress from '@mui/material/CircularProgress'
 import Grid from '@mui/material/Grid'
+import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import {villagers as newVillagers} from '../assets/data'
 
 const VillagersInfo = () => {
   const [villagers, setVillagers] = useState([])
+  const [displayedVillagers, setDisplayedVillagers] = useState([])
+
+  const searchFilter = (searchTerm) => {
+    if (searchTerm === '') {
+      setDisplayedVillagers(villagers)
+    } else {
+      let filteredVillagers = newVillagers.filter(villager => villager.name.toLowerCase().includes(searchTerm))
+      setDisplayedVillagers(filteredVillagers)
+    }
+  }
 
   useEffect(() => {
     setVillagers(newVillagers)
+    setDisplayedVillagers(newVillagers)
   }, [])
 
   return (
@@ -22,6 +34,10 @@ const VillagersInfo = () => {
         <>
         <Typography sx={{paddingBottom: "2rem"}} variant="h3">Villagers</Typography>
           <Box className="component-view">
+          <TextField sx={{ marginBottom: '1rem' }} id="outlined-search" label="Search" type="search" size="small"
+                            onChange={(event) => {
+                                searchFilter(event.target.value)
+                            }} />
             <Grid
               container
               spacing={2}
@@ -33,7 +49,7 @@ const VillagersInfo = () => {
               columnGap="50px"
               rowGap="20px"
             >
-              {villagers.map((villager) => {
+              {displayedVillagers.map((villager) => {
                 return (
                   <Grid key={villager.id} item>
                     <Card
@@ -86,7 +102,7 @@ const VillagersInfo = () => {
 
                           <CardMedia
                             component="img"
-                            sx={{ width: 75, height: 75, margin: "5px", padding: "10px 0 0 0", border: "3px solid black", borderRadius: "25px 25px 5px 5px", background: "#d9ac72"}}
+                            sx={{ width: 75, height: 'auto', margin: "5px", padding: "5px 0 0 0", border: "3px solid black", borderRadius: "25px 25px 5px 5px", background: "#d9ac72"}}
                             image={`/images/villagers/${villager.imageUrl}.png`}
                             alt={villager.imageUrl}
                           />
@@ -140,6 +156,7 @@ const VillagersInfo = () => {
               })}
             </Grid>
           </Box>
+          {displayedVillagers.length > 0 ? <></> : <h2>:(</h2>}
         </>
       ) : (
         <CircularProgress variant="indeterminate" size={150} thickness={3} />

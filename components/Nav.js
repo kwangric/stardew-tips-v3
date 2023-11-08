@@ -12,13 +12,14 @@ const Nav = () => {
       <AppBar position="static" sx={{ marginBottom: '2rem' }}>
           <Container maxWidth="xl">
             <Toolbar
-              sx={{ display: 'flex', justifyContent: 'center', gap: '50px' }}
+              sx={{ display: 'flex', justifyContent: 'center', gap: {xs: "5px", sm: "50px"}}}
               disableGutters
             >
               <Link href='/'>Home</Link>
               <Link href='/crops'>Crops</Link>
               <Link href='/villagers'>Villagers</Link>
               <Link href='/fish'>Fish</Link>
+              <Link href='/buildings'>Buildings</Link>
             </Toolbar>
           </Container>
         </AppBar>

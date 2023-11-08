@@ -1,8 +1,6 @@
 import Box from '@mui/material/Box'
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
 import Typography from '@mui/material/Typography'
 
 const Changelog = () => {
@@ -19,6 +17,13 @@ const Changelog = () => {
     >
       <Divider variant="middle" />
       <Typography variant="h5">Changelog</Typography>
+      <Box>
+        <Typography variant="h6">v2.1.1 - Nov 8, 2023</Typography>
+        <Typography variant="body1">
+          Added buildings guide.<br/>
+          Added search function on villagers guide.<br/>
+        </Typography>
+      </Box>
       <Box>
         <Typography variant="h6">v2.1.0 - Oct 11, 2023</Typography>
         <Typography variant="body1">

@@ -2224,3 +2224,331 @@ export const getFishBySeason = (season, fish) => {
   }
   return fish.filter((fish) => fish.season.includes(season));
 };
+
+// Buildings
+export const buildings = [
+  {
+    id: 1,
+    name: 'Barn',
+    type: 'carpenter',
+    cost: {'gold': '6,000g', 'wood': 'Wood (350)', 'stone': 'Stone (150)'},
+    buildTime: 3,
+    description:
+      'Houses 4 barn-dwelling animals.',
+    animals: ['Cows'],
+    imageUrl: 'barn',
+    size: '7x4'
+  },
+  {
+    id: 2,
+    name: 'Big Barn',
+    type: 'carpenter',
+    cost: {'gold': '12,000g', 'wood': 'Wood (450)', 'stone': 'Stone (200)'},
+    buildTime: 3,
+    description:
+      'Houses 8 barn-dwelling animals. Allows animals to give birth. Unlocks goats.',
+    animals: ['Cows', 'Goats'],
+    imageUrl: 'big-barn',
+    size: '7x4'
+  },
+  {
+    id: 3,
+    name: 'Deluxe Barn',
+    type: 'carpenter',
+    cost: {'gold': '25,000g', 'wood': 'Wood (550)', 'stone': 'Stone (300)'},
+    buildTime: 3,
+    description:
+      'Houses 12 barn-dwelling animals. Comes with an auto-feed system. Unlocks sheep and pigs.',
+    animals: ['Cows', 'Goats', 'Sheep', 'Pigs'],
+    imageUrl: 'deluxe-barn',
+    size: '7x4'
+  },
+  {
+    id: 4,
+    name: 'Coop',
+    type: 'carpenter',
+    cost: {'gold': '4,000g', 'wood': 'Wood (300)', 'stone': 'Stone (100)'},
+    buildTime: 3,
+    description:
+      'Houses 4 coop-dwelling animals.',
+    animals: ['Chickens'],
+    imageUrl: 'coop',
+    size: '6x3'
+  },
+  {
+    id: 5,
+    name: 'Big Coop',
+    type: 'carpenter',
+    cost: {'gold': '10,000g', 'wood': 'Wood (400)', 'stone': 'Stone (150)'},
+    buildTime: 3,
+    description:
+      'Houses 8 coop-dwelling animals. Comes with an incubator. Unlocks ducks.',
+    animals: ['Chickens', 'Ducks', 'Dinosaurs'],
+    imageUrl: 'big-coop',
+    size: '6x3'
+  },
+  {
+    id: 6,
+    name: 'Deluxe Coop',
+    type: 'carpenter',
+    cost: {'gold': '20,000g', 'wood': 'Wood (500)', 'stone': 'Stone (200)'},
+    buildTime: 3,
+    description:
+      'Houses 12 coop-dwelling animals. Comes with an auto-feed system. Unlocks rabbits.',
+    animals: ['Chickens', 'Ducks', 'Dinosaurs', 'Rabbits'],
+    imageUrl: 'deluxe-coop',
+    size: '6x3'
+  },
+  {
+    id: 7,
+    name: 'Fish Pond',
+    type: 'carpenter',
+    cost: {'gold': '5,000g', 'stone': 'Stone (200)', 'seaweed': 'Seaweed (5)', 'green-algae': 'Green Algae (5)'},
+    buildTime: 2,
+    description:
+      'Raise fish and harvest their produce. Fish multiply over time.',
+    animals: ['Fish'],
+    imageUrl: 'fish-pond',
+    size: '5x5'
+  },
+  {
+    id: 8,
+    name: 'Mill',
+    type: 'carpenter',
+    cost: {'gold': '2,500g', 'stone': 'Stone (50)', 'wood': 'Wood (150)', 'cloth': 'Cloth (4)'},
+    buildTime: 2,
+    description:
+      'Allows you to mill wheat, beets, and rice.',
+    animals: null,
+    imageUrl: 'mill',
+    size: '4x2'
+  },
+  {
+    id: 9,
+    name: 'Shed',
+    type: 'carpenter',
+    cost: {'gold': '15,000g', 'wood': 'Wood (300)'},
+    buildTime: 2,
+    description:
+      'An empty building. Fill it with whatever you like! The interior can be decorated.',
+    animals: null,
+    imageUrl: 'shed',
+    size: '7x3'
+  },
+  {
+    id: 10,
+    name: 'Big Shed',
+    type: 'carpenter',
+    cost: {'gold': '20,000g', 'wood': 'Wood (550)', 'stone': 'Stone (300)'},
+    buildTime: 2,
+    description:
+      'Doubles the size of the shed. The interior can be decorated.',
+    animals: null,
+    imageUrl: 'big-shed',
+    size: '7x3'
+  },
+  {
+    id: 11,
+    name: 'Silo',
+    type: 'carpenter',
+    cost: {'gold': '100g', 'stone': 'Stone (100)', 'clay': 'Clay (10)', 'copper-bar': 'Copper Bar (5)'},
+    buildTime: 2,
+    description:
+      'Allows you to cut and store grass for feed.',
+    animals: null,
+    imageUrl: 'silo',
+    size: '3x3'
+  },
+  {
+    id: 12,
+    name: 'Slime Hutch',
+    type: 'carpenter',
+    cost: {'gold': '10,000g', 'stone': 'Stone (500)', 'refined-quartz': 'Refined Quartz (10)', 'iridium-bar': 'Iridium Bar (1)'},
+    buildTime: 2,
+    description:
+      'Raise up to 20 slimes. Fill water throughs and slimes will create slime balls.',
+    animals: ['Slimes'],
+    imageUrl: 'slime-hutch',
+    size: '11x6'
+  },
+  {
+    id: 13,
+    name: 'Stable',
+    type: 'carpenter',
+    cost: {'gold': '10,000g', 'hardwood': 'Hardwood (100)', 'iron-bar': 'Iron Bar (5)'},
+    buildTime: 2,
+    description:
+      'Allows you to keep and ride a horse. Horse included.',
+    animals: ['Horses'],
+    imageUrl: 'stable',
+    size: '4x2'
+  },
+  {
+    id: 14,
+    name: 'Well',
+    type: 'carpenter',
+    cost: {'gold': '1,000g', 'stone': 'Stone (75)'},
+    buildTime: 2,
+    description:
+      'Provides a place for you to refill your watering can.',
+    animals: null,
+    imageUrl: 'well',
+    size: '3x3'
+  },
+  {
+    id: 15,
+    name: 'Stone Cabin',
+    type: 'carpenter',
+    cost: {'gold': '100g', 'stone': 'Stone (10)'},
+    buildTime: 0,
+    description:
+      'A home for a friend! Subsidized by the town agricultural fund.',
+    animals: null,
+    imageUrl: 'stone-cabin',
+    size: '5x3'
+  },
+  {
+    id: 16,
+    name: 'Plank Cabin',
+    type: 'carpenter',
+    cost: {'gold': '100g', 'wood': 'Wood (5)', 'fiber': 'Fiber (10)'},
+    buildTime: 0,
+    description:
+      'A home for a friend! Subsidized by the town agricultural fund.',
+    animals: null,
+    imageUrl: 'plank-cabin',
+    size: '5x3'
+  },
+  {
+    id: 17,
+    name: 'Log Cabin',
+    type: 'carpenter',
+    cost: {'gold': '100g', 'wood': 'Wood (10)'},
+    buildTime: 0,
+    description:
+      'A home for a friend! Subsidized by the town agricultural fund.',
+    animals: null,
+    imageUrl: 'log-cabin',
+    size: '5x3'
+  },
+  {
+    id: 18,
+    name: 'Shipping Bin',
+    type: 'carpenter',
+    cost: {'gold': '250g', 'wood': 'Wood (150)'},
+    buildTime: 0,
+    description:
+      'Items placed in it will be included in the nightly shipment.',
+    animals: null,
+    imageUrl: 'shipping-bin',
+    size: '2x1'
+  },
+  {
+    id: 19,
+    name: 'House Upgrade 1',
+    type: 'carpenter',
+    cost: {'gold': '10,000g', 'wood': 'Wood (450)'},
+    buildTime: 3,
+    description:
+      'Increase house size and adds a Kitchen.',
+    animals: null,
+    imageUrl: 'house-upgrade-1',
+    size: 'null'
+  },
+  {
+    id: 20,
+    name: 'House Upgrade 2',
+    type: 'carpenter',
+    cost: {'gold': '50,000g', 'hardwood': 'Hardwood (150)'},
+    buildTime: 3,
+    description:
+      'Adds two new rooms, one empty, and one with a crib and two single beds. This allows you to have two children. Both the kitchen and the bedroom are larger. Unlocks renovations and building/trim painting.',
+    animals: null,
+    imageUrl: 'house-upgrade-2',
+    size: 'null'
+  },
+  {
+    id: 21,
+    name: 'House Upgrade 3',
+    type: 'carpenter',
+    cost: {'gold': '100,000g'},
+    buildTime: 3,
+    description:
+      'Adds a cellar under the house, allowing access via the kitchen. The cellar allows the player to craft and house Casks which can age specific products (i.e., Cheese, Goat Cheese, Beer, Mead, Pale Ale, and Wine) to increase their quality and value.',
+    animals: null,
+    imageUrl: 'house-upgrade-3',
+    size: 'null'
+  },
+  {
+    id: 22,
+    name: 'Earth Obelisk',
+    type: 'wizard',
+    cost: {'gold': '500,000g', 'iridium-bar': 'Iridium Bar (10)', 'earth-crystal': 'Earth Crystal (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to the mountains.',
+    animals: null,
+    imageUrl: 'earth-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 23,
+    name: 'Water Obelisk',
+    type: 'wizard',
+    cost: {'gold': '500,000g', 'iridium-bar': 'Iridium Bar (5)', 'clam': 'Clam (10)', 'coral': 'Coral (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to the beach.',
+    animals: null,
+    imageUrl: 'water-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 24,
+    name: 'Desert Obelisk',
+    type: 'wizard',
+    cost: {'gold': '1,000,000g', 'iridium-bar': 'Iridium Bar (20)', 'coconut': 'Coconut (10)', 'cactus-fruit': 'Cactus Fruit (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to the desert.',
+    animals: null,
+    imageUrl: 'desert-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 25,
+    name: 'Island Obelisk',
+    type: 'wizard',
+    cost: {'gold': '1,000,000g', 'iridium-bar': 'Iridium Bar (10)', 'dragon-tooth': 'Dragon Tooth (10)', 'banana': 'Banana (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to Ginger Island.',
+    animals: null,
+    imageUrl: 'island-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 26,
+    name: 'Junimo Hut',
+    type: 'wizard',
+    cost: {'gold': '20,000g', 'stone': 'Stone (200)', 'starfruit': 'Starfruit (9)', 'fiber': 'Fiber (100)'},
+    buildTime: 0,
+    description:
+      'Junimos will harvest crops around the hut for you.',
+    animals: ['Junimos'],
+    imageUrl: 'junimo-hut',
+    size: '3x2'
+  },
+  {
+    id: 27,
+    name: 'Gold Clock',
+    type: 'wizard',
+    cost: {'gold': '10,000,000g'},
+    buildTime: 0,
+    description:
+      'Prevents debris from appearing on your farm. Keeps fences from decaying.',
+    animals: null,
+    imageUrl: 'gold-clock',
+    size: '3x2'
+  },
+]
