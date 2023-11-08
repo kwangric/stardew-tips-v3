@@ -86,7 +86,7 @@ const VillagersInfo = () => {
 
                           <CardMedia
                             component="img"
-                            sx={{ width: 75, height: 75, margin: "5px", padding: "10px 0 0 0", border: "3px solid black", borderRadius: "25px 25px 5px 5px", background: "#d9ac72"}}
+                            sx={{ width: 75, height: 'auto', margin: "5px", padding: "5px 0 0 0", border: "3px solid black", borderRadius: "25px 25px 5px 5px", background: "#d9ac72"}}
                             image={`/images/villagers/${villager.imageUrl}.png`}
                             alt={villager.imageUrl}
                           />
