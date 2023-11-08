@@ -42,8 +42,7 @@ const BuildingsInfo = () => {
                                             className="card"
                                             variant="outlined"
                                             sx={{
-                                                width: 230,
-                                                height: 600,
+                                                maxWidth: '350px',
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 alignContent: 'flex-start',
@@ -59,6 +58,11 @@ const BuildingsInfo = () => {
                                                     <CardMedia
                                                         component="img"
                                                         image={`/images/buildings/${building.imageUrl}.png`}
+                                                        sx={{
+                                                            padding: '1rem',
+                                                            width: 'auto',
+                                                            maxHeight: 250,
+                                                        }}
                                                         alt={building.imageUrl}
                                                     />
                                                     <Typography variant="h5" component="div">
