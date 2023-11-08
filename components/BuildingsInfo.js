@@ -97,26 +97,28 @@ const BuildingsInfo = () => {
                                             <Box
                                                 position="relative"
                                             >
-                                                {Object.entries(building.cost).map((cost, index) => {
-                                                    return (
-                                                        <Box key={index}>
-                                                            <CardMedia
-                                                                component="img"
-                                                                sx={{
-                                                                    width: 20,
-                                                                    height: 20,
-                                                                    display: 'inline',
-                                                                    verticalAlign: 'middle'
-                                                                }}
-                                                                image={`/images/resources/${cost[0]}.png`}
-                                                                alt='gold cost'
-                                                            />
-                                                            <Typography variant="body1" sx={{ display: 'inline' }}>
-                                                                {cost[1]}
-                                                            </Typography>
-                                                        </Box>
-                                                    )
-                                                })}
+                                                <Box sx={{ 'textAlign': 'left' }}>
+                                                    {Object.entries(building.cost).map((cost, index) => {
+                                                        return (
+                                                            <Box key={index}>
+                                                                <CardMedia
+                                                                    component="img"
+                                                                    sx={{
+                                                                        width: 20,
+                                                                        height: 20,
+                                                                        display: 'inline',
+                                                                        verticalAlign: 'middle'
+                                                                    }}
+                                                                    image={`/images/resources/${cost[0]}.png`}
+                                                                    alt={`${cost[0]}`}
+                                                                />
+                                                                <Typography variant="body1" sx={{ display: 'inline' }}>
+                                                                    &nbsp;{cost[1]}
+                                                                </Typography>
+                                                            </Box>
+                                                        )
+                                                    })}
+                                                </Box>
                                                 <Tooltip title={building.type === "carpenter" ? "Carpenter's Shop" : "Wizard's Tower"}>
                                                     <CardMedia
                                                         component="img"
