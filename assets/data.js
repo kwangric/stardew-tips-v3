@@ -2443,4 +2443,112 @@ export const buildings = [
     imageUrl: 'shipping-bin',
     size: '2x1'
   },
+  {
+    id: 19,
+    name: 'House Upgrade 1',
+    type: 'carpenter',
+    cost: {'gold': '10,000g', 'wood': 'Wood (450)'},
+    buildTime: 3,
+    description:
+      'Increase house size and adds a Kitchen.',
+    animals: null,
+    imageUrl: 'house-upgrade-1',
+    size: 'null'
+  },
+  {
+    id: 20,
+    name: 'House Upgrade 2',
+    type: 'carpenter',
+    cost: {'gold': '50,000g', 'hardwood': 'Hardwood (150)'},
+    buildTime: 3,
+    description:
+      'Adds two new rooms, one empty, and one with a crib and two single beds. This allows you to have two children. Both the kitchen and the bedroom are larger. Unlocks renovations and building/trim painting.',
+    animals: null,
+    imageUrl: 'house-upgrade-2',
+    size: 'null'
+  },
+  {
+    id: 21,
+    name: 'House Upgrade 3',
+    type: 'carpenter',
+    cost: {'gold': '100,000g'},
+    buildTime: 3,
+    description:
+      'Adds a cellar under the house, allowing access via the kitchen. The cellar allows the player to craft and house Casks which can age specific products (i.e., Cheese, Goat Cheese, Beer, Mead, Pale Ale, and Wine) to increase their quality and value.',
+    animals: null,
+    imageUrl: 'house-upgrade-3',
+    size: 'null'
+  },
+  {
+    id: 22,
+    name: 'Earth Obelisk',
+    type: 'wizard',
+    cost: {'gold': '500,000g', 'iridium-bar': 'Iridium Bar (10)', 'earth-crystal': 'Earth Crystal (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to the mountains.',
+    animals: null,
+    imageUrl: 'earth-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 23,
+    name: 'Water Obelisk',
+    type: 'wizard',
+    cost: {'gold': '500,000g', 'iridium-bar': 'Iridium Bar (5)', 'clam': 'Clam (10)', 'coral': 'Coral (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to the beach.',
+    animals: null,
+    imageUrl: 'water-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 24,
+    name: 'Desert Obelisk',
+    type: 'wizard',
+    cost: {'gold': '1,000,000g', 'iridium-bar': 'Iridium Bar (20)', 'coconut': 'Coconut (10)', 'cactus-fruit': 'Cactus Fruit (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to the desert.',
+    animals: null,
+    imageUrl: 'desert-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 25,
+    name: 'Island Obelisk',
+    type: 'wizard',
+    cost: {'gold': '1,000,000g', 'iridium-bar': 'Iridium Bar (10)', 'dragon-tooth': 'Dragon Tooth (10)', 'banana': 'Banana (10)'},
+    buildTime: 0,
+    description:
+      'Warps you to Ginger Island.',
+    animals: null,
+    imageUrl: 'island-obelisk',
+    size: '3x2'
+  },
+  {
+    id: 26,
+    name: 'Junimo Hut',
+    type: 'wizard',
+    cost: {'gold': '20,000g', 'stone': 'Stone (200)', 'starfruit': 'Starfruit (9)', 'fiber': 'Fiber (100)'},
+    buildTime: 0,
+    description:
+      'Junimos will harvest crops around the hut for you.',
+    animals: ['Junimos'],
+    imageUrl: 'junimo-hut',
+    size: '3x2'
+  },
+  {
+    id: 27,
+    name: 'Gold Clock',
+    type: 'wizard',
+    cost: {'gold': '10,000,000g'},
+    buildTime: 0,
+    description:
+      'Prevents debris from appearing on your farm. Keeps fences from decaying.',
+    animals: null,
+    imageUrl: 'gold-clock',
+    size: '3x2'
+  },
 ]
