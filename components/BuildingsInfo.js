@@ -59,7 +59,7 @@ const BuildingsInfo = () => {
                                             variant="outlined"
                                             sx={{
                                                 width: '300px',
-                                                height: '425px',
+                                                height: 'auto',
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 alignContent: 'flex-start',
@@ -78,24 +78,25 @@ const BuildingsInfo = () => {
                                                         padding: '1rem',
                                                         width: 'auto',
                                                         maxHeight: '200px',
+                                                        border: "3px solid black", borderRadius: "25px 25px 25px 25px", backgroundImage: "url('/images/buildings/farm-background.png')"
                                                     }}
                                                     alt={building.imageUrl}
                                                 />
-                                                <Typography variant="h5" component="div">
-                                                    {building.name}
-                                                </Typography>
-                                                <Typography
-                                                    sx={{ fontSize: '0.75rem', fontWeight: 'bold' }}
-                                                    variant="subtitle2"
-                                                >
-                                                    {building.description}
-                                                </Typography>
+                                                <Box sx={{margin: '1rem'}}>
+                                                    <Typography variant="h5" component="div">
+                                                        {building.name}
+                                                    </Typography>
+                                                    <Typography
+                                                        sx={{ fontSize: '0.75rem', fontWeight: 'bold' }}
+                                                        variant="subtitle2"
+                                                    >
+                                                        {building.description}
+                                                    </Typography>
+                                                </Box>
                                             </Box>
                                             <Box
                                                 position="relative"
-                                                sx={{
-                                                    marginTop: '1rem',
-                                                }}>
+                                                >
                                                 {Object.entries(building.cost).map((cost, index) => {
                                                     return (
                                                         <Box key={index}>
