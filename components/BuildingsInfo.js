@@ -82,7 +82,7 @@ const BuildingsInfo = () => {
                                                     }}
                                                     alt={building.imageUrl}
                                                 />
-                                                <Box sx={{margin: '1rem'}}>
+                                                <Box sx={{ margin: '1rem' }}>
                                                     <Typography variant="h5" component="div">
                                                         {building.name}
                                                     </Typography>
@@ -96,7 +96,7 @@ const BuildingsInfo = () => {
                                             </Box>
                                             <Box
                                                 position="relative"
-                                                >
+                                            >
                                                 {Object.entries(building.cost).map((cost, index) => {
                                                     return (
                                                         <Box key={index}>
