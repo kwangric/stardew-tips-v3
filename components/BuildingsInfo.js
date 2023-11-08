@@ -5,15 +5,27 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import CircularProgress from '@mui/material/CircularProgress'
 import Grid from '@mui/material/Grid'
+import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
 import { buildings as newBuildings } from '../assets/data'
 
 const BuildingsInfo = () => {
     const [buildings, setBuildings] = useState([])
+    const [displayedBuildings, setDisplayedBuildings] = useState([])
+
+    const searchFilter = (searchTerm) => {
+        if (searchTerm === '') {
+            setDisplayedBuildings(buildings)
+        } else {
+            let filteredBuildings = newBuildings.filter(building => building.name.toLowerCase().includes(searchTerm))
+            setDisplayedBuildings(filteredBuildings)
+        }
+    }
 
     useEffect(() => {
         setBuildings(newBuildings)
+        setDisplayedBuildings(newBuildings)
     }, [])
 
     return (
@@ -24,6 +36,10 @@ const BuildingsInfo = () => {
                         Buildings
                     </Typography>
                     <Box className="component-view">
+                        <TextField sx={{ marginBottom: '1rem' }} id="outlined-search" label="Search" type="search" size="small"
+                            onChange={(event) => {
+                                searchFilter(event.target.value)
+                            }} />
                         <Grid
                             container
                             spacing={2}
@@ -35,7 +51,7 @@ const BuildingsInfo = () => {
                             columnGap="50px"
                             rowGap="20px"
                         >
-                            {buildings.map((building) => {
+                            {displayedBuildings.map((building) => {
                                 return (
                                     <Grid key={building.id} item>
                                         <Card
@@ -122,6 +138,7 @@ const BuildingsInfo = () => {
                             })}
                         </Grid>
                     </Box>
+                    {displayedBuildings.length > 0 ? <></> : <h2>:(</h2>}
                 </>
             ) : (
                 <CircularProgress variant="indeterminate" size={150} thickness={3} />
