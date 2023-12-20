@@ -14,7 +14,7 @@ const Nav = () => {
             <Toolbar
               sx={{ display: 'flex', justifyContent: 'center', gap: {xs: "5px", sm: "50px"}}}
               disableGutters
-              className="page-title"
+              className="new-font"
             >
               <Link href='/'>Home</Link>
               <Link href='/crops'>Crops</Link>
