@@ -32,7 +32,7 @@ const VillagersInfo = () => {
     <>
       {villagers.length > 0 ? (
         <>
-          <Typography sx={{ paddingBottom: "2rem" }} variant="h3" className="page-title">
+          <Typography sx={{ paddingBottom: "2rem" }} variant="h3" className="new-font">
             Villagers
           </Typography>
           <Box className="component-view">

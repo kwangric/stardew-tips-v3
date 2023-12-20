@@ -102,7 +102,7 @@ const CropsInfo = () => {
     <>
       {crops.length > 0 ? (
         <>
-          <Typography sx={{ paddingBottom: '2rem' }} variant="h3" className="page-title">
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h3" className="new-font">
             Crops
           </Typography>
           <Box className="component-view">
@@ -263,7 +263,7 @@ const CropsInfo = () => {
                       }}
                     >
                       <Box className="card-title">
-                        <Typography variant="h5" component="div">
+                        <Typography variant="h5" component="div" >
                           {crop.name}
                         </Typography>
                         <Box
