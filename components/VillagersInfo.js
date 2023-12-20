@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField'
 import Tooltip from '@mui/material/Tooltip'
 import Typography from '@mui/material/Typography'
-import {villagers as newVillagers} from '../assets/data'
+import { villagers as newVillagers } from '../assets/data'
 
 const VillagersInfo = () => {
   const [villagers, setVillagers] = useState([])
@@ -32,12 +32,14 @@ const VillagersInfo = () => {
     <>
       {villagers.length > 0 ? (
         <>
-        <Typography sx={{paddingBottom: "2rem"}} variant="h3">Villagers</Typography>
+          <Typography sx={{ paddingBottom: "2rem" }} variant="h3" className="new-font">
+            Villagers
+          </Typography>
           <Box className="component-view">
-          <TextField sx={{ marginBottom: '1rem' }} id="outlined-search" label="Search" type="search" size="small"
-                            onChange={(event) => {
-                                searchFilter(event.target.value)
-                            }} />
+            <TextField sx={{ marginBottom: '1rem' }} id="outlined-search" label="Search" type="search" size="small"
+              onChange={(event) => {
+                searchFilter(event.target.value)
+              }} />
             <Grid
               container
               spacing={2}
@@ -102,7 +104,7 @@ const VillagersInfo = () => {
 
                           <CardMedia
                             component="img"
-                            sx={{ width: 75, height: 'auto', margin: "5px", padding: "5px 0 0 0", border: "3px solid black", borderRadius: "25px 25px 5px 5px", background: "#d9ac72"}}
+                            sx={{ width: 75, height: 'auto', margin: "5px", padding: "5px 0 0 0", border: "3px solid black", borderRadius: "25px 25px 5px 5px", background: "#d9ac72" }}
                             image={`/images/villagers/${villager.imageUrl}.png`}
                             alt={villager.imageUrl}
                           />

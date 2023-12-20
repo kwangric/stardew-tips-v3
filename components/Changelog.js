@@ -25,7 +25,7 @@ const Changelog = () => {
     >
       <Divider variant="middle" />
       <div>
-        <Button variant="text" size="large" onClick={handleOpen}>Changelog</Button>
+        <Button variant="text" size="large" onClick={handleOpen} >Changelog</Button>
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
