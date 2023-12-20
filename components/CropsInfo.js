@@ -102,7 +102,7 @@ const CropsInfo = () => {
     <>
       {crops.length > 0 ? (
         <>
-          <Typography sx={{ paddingBottom: '2rem' }} variant="h3">
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h3" className="page-title">
             Crops
           </Typography>
           <Box className="component-view">

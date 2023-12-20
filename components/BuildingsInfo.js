@@ -32,7 +32,7 @@ const BuildingsInfo = () => {
         <>
             {buildings.length > 0 ? (
                 <>
-                    <Typography sx={{ paddingBottom: "2rem" }} variant="h3">
+                    <Typography sx={{ paddingBottom: "2rem" }} variant="h3" className="page-title">
                         Buildings
                     </Typography>
                     <Box className="component-view">

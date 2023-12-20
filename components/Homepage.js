@@ -6,7 +6,7 @@ import Changelog from './Changelog'
 const Homepage = () => {
   return (
     <Card sx={{backgroundColor: "#fdfd96", padding: "2rem", borderRadius: '25px'}} variant="outlined">
-      <Typography variant="h3" display="block">
+      <Typography variant="h3" display="block" className="page-title">
         Stardew Tips
       </Typography>
       <br />

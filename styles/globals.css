@@ -18,6 +18,10 @@ a {
   box-sizing: border-box;
 }
 
+.page-title {
+  font-family: 'Gloria Hallelujah', 'Roboto', san-serif;
+}
+
 .component-view {
   width: 80vw;
   margin: 0 auto;

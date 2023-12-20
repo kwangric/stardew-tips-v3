@@ -115,7 +115,7 @@ const FishInfo = () => {
     <>
       {Object.keys(fish).length > 0 ? (
         <div height="100vh">
-          <Typography sx={{ paddingBottom: '2rem' }} variant="h3">
+          <Typography sx={{ paddingBottom: '2rem' }} variant="h3" className="page-title">
             Fish
           </Typography>
           <Box className="component-view">
