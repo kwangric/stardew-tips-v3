@@ -20,6 +20,23 @@ export const crops = [
   },
   {
     id: 2,
+    name: 'Carrot',
+    type: 'vegetable',
+    season: ['spring'],
+    shop: null,
+    price: null,
+    jojaPrice: null,
+    growTime: 3,
+    regrowthTime: null,
+    sellPrice: 35,
+    description:
+      'A fast-growing, colorful tuber that makes for a great snack.',
+    note: null,
+    backgroundColor: '#acff88',
+    imageUrl: 'carrot',
+  },
+  {
+    id: 3,
     name: 'Cauliflower',
     type: 'vegetable',
     season: ['spring'],
@@ -36,7 +53,7 @@ export const crops = [
     imageUrl: 'cauliflower',
   },
   {
-    id: 3,
+    id: 4,
     name: 'Coffee Bean',
     type: 'seed',
     season: ['spring', 'summer'],
@@ -53,7 +70,7 @@ export const crops = [
     imageUrl: 'coffee-bean',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Garlic',
     type: 'vegetable',
     season: ['spring'],
@@ -70,7 +87,7 @@ export const crops = [
     imageUrl: 'garlic',
   },
   {
-    id: 5,
+    id: 6,
     name: 'Green Bean',
     type: 'vegetable',
     season: ['spring'],
@@ -86,7 +103,7 @@ export const crops = [
     imageUrl: 'green-bean',
   },
   {
-    id: 6,
+    id: 7,
     name: 'Kale',
     type: 'vegetable',
     season: ['spring'],
@@ -102,7 +119,7 @@ export const crops = [
     imageUrl: 'kale',
   },
   {
-    id: 7,
+    id: 8,
     name: 'Parsnip',
     type: 'vegetable',
     season: ['spring'],
@@ -119,7 +136,7 @@ export const crops = [
     imageUrl: 'parsnip',
   },
   {
-    id: 8,
+    id: 9,
     name: 'Potato',
     type: 'vegetable',
     season: ['spring'],
@@ -135,7 +152,7 @@ export const crops = [
     imageUrl: 'potato',
   },
   {
-    id: 9,
+    id: 10,
     name: 'Rhubarb',
     type: 'fruit',
     season: ['spring'],
@@ -152,7 +169,7 @@ export const crops = [
     imageUrl: 'rhubarb',
   },
   {
-    id: 10,
+    id: 11,
     name: 'Strawberry',
     type: 'fruit',
     season: ['spring'],
@@ -168,7 +185,7 @@ export const crops = [
     imageUrl: 'strawberry',
   },
   {
-    id: 11,
+    id: 12,
     name: 'Tulip',
     type: 'flower',
     season: ['spring'],
@@ -185,7 +202,7 @@ export const crops = [
     imageUrl: 'tulip',
   },
   {
-    id: 12,
+    id: 13,
     name: 'Unmilled Rice',
     type: 'vegetable',
     season: ['spring'],
@@ -204,7 +221,7 @@ export const crops = [
   },
   // Summer
   {
-    id: 13,
+    id: 14,
     name: 'Blueberry',
     type: 'fruit',
     season: ['summer'],
@@ -221,7 +238,7 @@ export const crops = [
     imageUrl: 'blueberry',
   },
   {
-    id: 14,
+    id: 15,
     name: 'Corn',
     type: 'vegetable',
     season: ['summer', 'fall'],
@@ -238,7 +255,7 @@ export const crops = [
     imageUrl: 'corn',
   },
   {
-    id: 15,
+    id: 16,
     name: 'Hops',
     type: 'vegetable',
     season: ['summer'],
@@ -254,7 +271,7 @@ export const crops = [
     imageUrl: 'hops',
   },
   {
-    id: 16,
+    id: 17,
     name: 'Hot Pepper',
     type: 'fruit',
     season: ['summer'],
@@ -270,7 +287,7 @@ export const crops = [
     imageUrl: 'hot-pepper',
   },
   {
-    id: 17,
+    id: 18,
     name: 'Melon',
     type: 'fruit',
     season: ['summer'],
@@ -286,7 +303,7 @@ export const crops = [
     imageUrl: 'melon',
   },
   {
-    id: 18,
+    id: 19,
     name: 'Poppy',
     type: 'flower',
     season: ['summer'],
@@ -303,7 +320,7 @@ export const crops = [
     imageUrl: 'poppy',
   },
   {
-    id: 19,
+    id: 20,
     name: 'Radish',
     type: 'vegetable',
     season: ['summer'],
@@ -320,7 +337,7 @@ export const crops = [
     imageUrl: 'radish',
   },
   {
-    id: 20,
+    id: 21,
     name: 'Red Cabbage',
     type: 'vegetable',
     season: ['summer'],
@@ -337,7 +354,7 @@ export const crops = [
     imageUrl: 'red-cabbage',
   },
   {
-    id: 21,
+    id: 22,
     name: 'Starfruit',
     type: 'fruit',
     season: ['summer'],
@@ -354,7 +371,7 @@ export const crops = [
     imageUrl: 'starfruit',
   },
   {
-    id: 22,
+    id: 23,
     name: 'Summer Spangle',
     type: 'flower',
     season: ['summer'],
@@ -371,7 +388,24 @@ export const crops = [
     imageUrl: 'summer-spangle',
   },
   {
-    id: 23,
+    id: 24,
+    name: 'Summer Squash',
+    type: 'vegetable',
+    season: ['summer'],
+    shop: null,
+    price: null,
+    jojaPrice: null,
+    growTime: 6,
+    regrowthTime: 3,
+    sellPrice: 45,
+    description:
+      'A curved yellow squash that is harvested while immature, and still tender.',
+    note: null,
+    backgroundColor: '#ffe38c',
+    imageUrl: 'summer-squash',
+  },
+  {
+    id: 25,
     name: 'Sunflower',
     type: 'flower',
     season: ['summer', 'fall'],
@@ -388,7 +422,7 @@ export const crops = [
     imageUrl: 'sunflower',
   },
   {
-    id: 24,
+    id: 26,
     name: 'Tomato',
     type: 'vegetable',
     season: ['summer'],
@@ -405,7 +439,7 @@ export const crops = [
     imageUrl: 'tomato',
   },
   {
-    id: 25,
+    id: 27,
     name: 'Wheat',
     type: 'vegetable',
     season: ['summer', 'fall'],
@@ -423,7 +457,7 @@ export const crops = [
   },
   // Fall
   {
-    id: 26,
+    id: 28,
     name: 'Amaranth',
     type: 'vegetable',
     season: ['fall'],
@@ -439,7 +473,7 @@ export const crops = [
     imageUrl: 'amaranth',
   },
   {
-    id: 27,
+    id: 29,
     name: 'Artichoke',
     type: 'vegetable',
     season: ['fall'],
@@ -456,7 +490,7 @@ export const crops = [
     imageUrl: 'artichoke',
   },
   {
-    id: 28,
+    id: 30,
     name: 'Beet',
     type: 'vegetable',
     season: ['fall'],
@@ -473,7 +507,7 @@ export const crops = [
     imageUrl: 'beet',
   },
   {
-    id: 29,
+    id: 31,
     name: 'Bok Choy',
     type: 'vegetable',
     season: ['fall'],
@@ -490,7 +524,23 @@ export const crops = [
     imageUrl: 'bok-choy',
   },
   {
-    id: 30,
+    id: 32,
+    name: 'Broccoli',
+    type: 'vegetable',
+    season: ['fall'],
+    shop: null,
+    price: null,
+    jojaPrice: null,
+    growTime: 8,
+    regrowthTime: 4,
+    sellPrice: 70,
+    description: 'The flowering head of a broccoli plant. The tiny buds give it a unique texture.',
+    note: null,
+    backgroundColor: '#ffc68b',
+    imageUrl: 'broccoli',
+  },
+  {
+    id: 33,
     name: 'Cranberries',
     type: 'fruit',
     season: ['fall'],
@@ -506,7 +556,7 @@ export const crops = [
     imageUrl: 'cranberries',
   },
   {
-    id: 31,
+    id: 34,
     name: 'Eggplant',
     type: 'vegetable',
     season: ['fall'],
@@ -523,7 +573,7 @@ export const crops = [
     imageUrl: 'eggplant',
   },
   {
-    id: 32,
+    id: 35,
     name: 'Fairy Rose',
     type: 'flower',
     season: ['fall'],
@@ -540,7 +590,7 @@ export const crops = [
     imageUrl: 'fairy-rose',
   },
   {
-    id: 33,
+    id: 36,
     name: 'Grape',
     type: 'fruit',
     season: ['fall'],
@@ -556,7 +606,7 @@ export const crops = [
     imageUrl: 'grape',
   },
   {
-    id: 34,
+    id: 37,
     name: 'Pumpkin',
     type: 'vegetable',
     season: ['fall'],
@@ -573,7 +623,7 @@ export const crops = [
     imageUrl: 'pumpkin',
   },
   {
-    id: 35,
+    id: 38,
     name: 'Yam',
     type: 'vegetable',
     season: ['fall'],
@@ -588,9 +638,26 @@ export const crops = [
     backgroundColor: '#ffc68b',
     imageUrl: 'yam',
   },
+  // Winter
+  {
+    id: 39,
+    name: 'Powdermelon',
+    type: 'fruit',
+    season: ['winter'],
+    shop: null,
+    price: null,
+    jojaPrice: null,
+    growTime: 7,
+    regrowthTime: null,
+    sellPrice: 60,
+    description: 'Named for the powdery coating that forms on the surface, this melon is crisp and sweet, with a delicate flavor.',
+    note: 'Can become a Giant Crop.',
+    backgroundColor: '#b1f4fa',
+    imageUrl: 'powdermelon',
+  },
   // Special
   {
-    id: 36,
+    id: 40,
     name: 'Ancient Fruit',
     type: 'fruit',
     season: ['spring', 'summer', 'fall'],
@@ -606,7 +673,7 @@ export const crops = [
     imageUrl: 'ancient-fruit',
   },
   {
-    id: 37,
+    id: 41,
     name: 'Pineapple',
     type: 'fruit',
     season: ['summer'],
@@ -622,7 +689,7 @@ export const crops = [
     imageUrl: 'pineapple',
   },
   {
-    id: 38,
+    id: 42,
     name: 'Taro Root',
     type: 'vegetable',
     season: ['summer'],
@@ -639,7 +706,7 @@ export const crops = [
     imageUrl: 'taro-root',
   },
   {
-    id: 39,
+    id: 43,
     name: 'Sweet Gem Berry',
     type: null,
     season: ['fall'],
