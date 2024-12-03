@@ -56,6 +56,12 @@ const Changelog = () => {
 
                 {/* CHANGELOG */}
                 <Box>
+                  <Typography variant="h6"><strong>v2.2.0 - Dec 3, 2024</strong></Typography>
+                  <Typography variant="body1">
+                    Finally updated for 1.6<br /><br />
+                  </Typography>
+                </Box>
+                <Box>
                   <Typography variant="h6"><strong>v2.1.1 - Nov 8, 2023</strong></Typography>
                   <Typography variant="body1">
                     Added buildings guide.<br />
