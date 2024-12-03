@@ -2473,7 +2473,7 @@ export const buildings = [
       'Raise up to 20 slimes. Fill water throughs and slimes will create slime balls.',
     animals: ['Slimes'],
     imageUrl: 'slime-hutch',
-    size: '11x6'
+    size: '7x4'
   },
   {
     id: 13,
@@ -2501,21 +2501,9 @@ export const buildings = [
   },
   {
     id: 15,
-    name: 'Stone Cabin',
+    name: 'Cabin',
     type: 'carpenter',
-    cost: {'gold': '100g', 'stone': 'Stone (10)'},
-    buildTime: 0,
-    description:
-      'A home for a friend! Subsidized by the town agricultural fund.',
-    animals: null,
-    imageUrl: 'stone-cabin',
-    size: '5x3'
-  },
-  {
-    id: 16,
-    name: 'Plank Cabin',
-    type: 'carpenter',
-    cost: {'gold': '100g', 'wood': 'Wood (5)', 'fiber': 'Fiber (10)'},
+    cost: {'gold': '100g'},
     buildTime: 0,
     description:
       'A home for a friend! Subsidized by the town agricultural fund.',
@@ -2524,19 +2512,7 @@ export const buildings = [
     size: '5x3'
   },
   {
-    id: 17,
-    name: 'Log Cabin',
-    type: 'carpenter',
-    cost: {'gold': '100g', 'wood': 'Wood (10)'},
-    buildTime: 0,
-    description:
-      'A home for a friend! Subsidized by the town agricultural fund.',
-    animals: null,
-    imageUrl: 'log-cabin',
-    size: '5x3'
-  },
-  {
-    id: 18,
+    id: 16,
     name: 'Shipping Bin',
     type: 'carpenter',
     cost: {'gold': '250g', 'wood': 'Wood (150)'},
@@ -2548,7 +2524,19 @@ export const buildings = [
     size: '2x1'
   },
   {
-    id: 19,
+    id: 17,
+    name: 'Pet Bowl',
+    type: 'carpenter',
+    cost: {'gold': '5000g', 'hardwood': 'Hardwood (25)'},
+    buildTime: 0,
+    description:
+      'Provides a dedicated home for one pet.',
+    animals: ['cats', 'dogs', 'turtles'],
+    imageUrl: 'pet-bowl',
+    size: '2x2'
+  },
+  {
+    id: 18,
     name: 'House Upgrade 1',
     type: 'carpenter',
     cost: {'gold': '10,000g', 'wood': 'Wood (450)'},
@@ -2560,10 +2548,10 @@ export const buildings = [
     size: 'null'
   },
   {
-    id: 20,
+    id: 19,
     name: 'House Upgrade 2',
     type: 'carpenter',
-    cost: {'gold': '50,000g', 'hardwood': 'Hardwood (150)'},
+    cost: {'gold': '65,000g', 'hardwood': 'Hardwood (100)'},
     buildTime: 3,
     description:
       'Adds two new rooms, one empty, and one with a crib and two single beds. This allows you to have two children. Both the kitchen and the bedroom are larger. Unlocks renovations and building/trim painting.',
@@ -2572,7 +2560,7 @@ export const buildings = [
     size: 'null'
   },
   {
-    id: 21,
+    id: 20,
     name: 'House Upgrade 3',
     type: 'carpenter',
     cost: {'gold': '100,000g'},
@@ -2584,7 +2572,7 @@ export const buildings = [
     size: 'null'
   },
   {
-    id: 22,
+    id: 21,
     name: 'Earth Obelisk',
     type: 'wizard',
     cost: {'gold': '500,000g', 'iridium-bar': 'Iridium Bar (10)', 'earth-crystal': 'Earth Crystal (10)'},
@@ -2596,7 +2584,7 @@ export const buildings = [
     size: '3x2'
   },
   {
-    id: 23,
+    id: 22,
     name: 'Water Obelisk',
     type: 'wizard',
     cost: {'gold': '500,000g', 'iridium-bar': 'Iridium Bar (5)', 'clam': 'Clam (10)', 'coral': 'Coral (10)'},
@@ -2608,7 +2596,7 @@ export const buildings = [
     size: '3x2'
   },
   {
-    id: 24,
+    id: 23,
     name: 'Desert Obelisk',
     type: 'wizard',
     cost: {'gold': '1,000,000g', 'iridium-bar': 'Iridium Bar (20)', 'coconut': 'Coconut (10)', 'cactus-fruit': 'Cactus Fruit (10)'},
@@ -2620,7 +2608,7 @@ export const buildings = [
     size: '3x2'
   },
   {
-    id: 25,
+    id: 24,
     name: 'Island Obelisk',
     type: 'wizard',
     cost: {'gold': '1,000,000g', 'iridium-bar': 'Iridium Bar (10)', 'dragon-tooth': 'Dragon Tooth (10)', 'banana': 'Banana (10)'},
@@ -2632,7 +2620,7 @@ export const buildings = [
     size: '3x2'
   },
   {
-    id: 26,
+    id: 25,
     name: 'Junimo Hut',
     type: 'wizard',
     cost: {'gold': '20,000g', 'stone': 'Stone (200)', 'starfruit': 'Starfruit (9)', 'fiber': 'Fiber (100)'},
@@ -2644,7 +2632,7 @@ export const buildings = [
     size: '3x2'
   },
   {
-    id: 27,
+    id: 26,
     name: 'Gold Clock',
     type: 'wizard',
     cost: {'gold': '10,000,000g'},
